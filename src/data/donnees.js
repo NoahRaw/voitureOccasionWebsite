@@ -1,22 +1,38 @@
-const donnees = [
+  const formulaire = [
     {
-       imagePrincipale: 'source1.jpg', price: 12, initialStock: 13,imageSources : ['source2.jpg','source3.jpg','source4.jpg']
+      formulaireId : 'bd',
+      formulaireTitle : 'Insertion de description',
+      jsonValue : 
+      {
+        idboitedevitesse: 0,
+        description: '',
+      },
+      lien : 'http://localhost:52195/Boitedevitesse',
+      listInput : 
+      [
+        {
+          name : 'description',
+          type : 'text',
+        }       
+      ]
     },
     {
-      imagePrincipale: 'source1.jpg', price: 134, initialStock: 234,imageSources : ['source2.jpg','source3.jpg','source4.jpg']
-    },
-    {
-      imagePrincipale: 'source1.jpg', price: 234, initialStock: 567,imageSources : ['source2.jpg','source3.jpg','source4.jpg']
-    },
-    {
-      imagePrincipale: 'source1.jpg', price: 234, initialStock: 567,imageSources : ['source2.jpg','source3.jpg','source4.jpg']
-    },
-    {
-      imagePrincipale: 'source1.jpg', price: 234, initialStock: 567,imageSources : ['source2.jpg','source3.jpg','source4.jpg']
-    },
-    {
-      imagePrincipale: 'source1.jpg', price: 234, initialStock: 567,imageSources : ['source2.jpg','source3.jpg','source4.jpg']
+      formulaireId : 'bc',
+      formulaireTitle : 'Insertion de description 2',
+      jsonValue : 
+      {
+        idboitedevitesse: 0,
+        description: '',
+      },
+      lien : 'http://localhost:52195/Boitedevitesse',
+      listInput : 
+      [
+        {
+          name : 'description',
+          type : 'text',
+        }       
+      ]
     }
-  ];
+  ]
 
-  export default donnees;
+  export default formulaire;
