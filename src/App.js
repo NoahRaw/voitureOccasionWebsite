@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Formulaire from './composant/Formulaire.js';
-import FormulaireCompliqueExemple from './composant/FormulaireCompliqueExemple.js';
+import FormulaireRevenueUtilisateur from './composant/formulaire/FormulaireRevenueUtilisateur.js';
+import MyChart from './composant/chart/MyChart.js';
 import donnees from './data/donnees.js';
 
 export default function name(params) {
@@ -17,8 +18,9 @@ export default function name(params) {
         <Formulaire formulaire={form} />
       )
     ))}
-    
-    <FormulaireCompliqueExemple />
+
+    <FormulaireRevenueUtilisateur/>
+    {/* <MyChart /> */}
     </div>
   );
 }
