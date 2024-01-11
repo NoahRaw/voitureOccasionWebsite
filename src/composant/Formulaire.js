@@ -1,6 +1,9 @@
 import React, { useState,useEffect } from 'react';
 
 const App = ({formulaire}) => {
+  // État initial de l'objet JSON
+  const [myJson, setMyJson] = useState(formulaire);
+
   const [formData, setFormData] = useState(
     formulaire.jsonValue
   );
@@ -47,11 +50,11 @@ const App = ({formulaire}) => {
         const response = await fetch('http://localhost:52195/Boitedevitesse', {
           method: 'GET'
         });
-    
+
         if (response.ok) {
           const options = await response.json();
-          formulaire.data=options;
           setCheckboxOptions(options);
+          formulaire.data=options;
         } else {
           console.error('Erreur lors de la requête HTTP:', response.statusText);
         }
@@ -64,6 +67,40 @@ const App = ({formulaire}) => {
   }, []);
 
   const listInput = formulaire.listInput;
+
+  const [data, setData] = useState([]);
+  const webServiceUrls = ["http://localhost:52195/Puissance", "http://localhost:52195/Boitedevitesse"];
+
+  useEffect(() => {
+    const fetchDataFromWebService = async () => {
+      try {
+        // Utilisation de Promise.all pour effectuer des requêtes en parallèle
+        const responses = await Promise.all(
+          webServiceUrls.map(url => fetch(url))
+        );
+
+        // Vérification si toutes les réponses sont ok
+        const dataFromWebServices = await Promise.all(
+          responses.map(response => {
+            if (response.ok) {
+              return response.json();
+            }
+            // Gérer les erreurs si nécessaire
+            return null;
+          })
+        );
+
+        // Mise à jour de l'état avec les données récupérées
+        setData(dataFromWebServices.filter(data => data !== null));
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données:', error);
+      }
+    };
+
+    fetchDataFromWebService();
+  }, []); // La dépendance vide signifie que cette fonction s'exécute uniquement après le montage initial du composant
+
+  let i=0;
 
   return (
     <div>
@@ -81,32 +118,32 @@ const App = ({formulaire}) => {
                   onChange={handleInputChange}
                 />
               )}
-              {input.type === 'checkbox' && (
-              checkboxOptions.map((option, optionIndex) => (
+              {data && data.length > 0 && input.type === 'checkbox' && (
+              data[0].map((option, optionIndex) => (
                   <div key={optionIndex}>
                     <label>
                       <input
                         type="checkbox"
                         name={input.name}
-                        checked={formData[input.name] && formData[input.name].includes(option.idboitedevitesse)}
+                        // checked={formData[input.name] && formData[input.name].includes(option.idboitedevitesse)}
                         onChange={handleInputChange}
-                        value={option.idboitedevitesse}
+                        value={option[input.optionValue.mainValue]}
                       />
-                      {option.description}
+                      {option[input.optionValue.frontValue]}
                     </label>
                   </div>
                 ))
               )}
-              {input.type === 'select' && (
+              {data && data.length > 0 && input.type === 'select' && (
                 <select
                   name={input.name}
                   value={formData[input.name]}
                   onChange={handleInputChange}
                 >
                   <option value="">Sélectionnez une option</option>
-                  {checkboxOptions.map((option, optionIndex) => (
-                    <option key={optionIndex} value={option['idboitedevitesse']}>
-                      {option['description']}
+                  {data[1].map((option, optionIndex) => (
+                    <option key={optionIndex} value={option[input.optionValue.mainValue]}>
+                      {option[input.optionValue.frontValue]}
                     </option>
                   ))}
 

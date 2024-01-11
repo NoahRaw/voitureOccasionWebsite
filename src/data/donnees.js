@@ -12,8 +12,23 @@
       [
         {
           name : 'description',
+          type : 'select',
+          lienDonnees: 'http://localhost:52195/Boitedevitesse',
+          optionValue:
+          {
+            mainValue : "idboitedevitesse",
+            frontValue : "description"
+          }
+        },
+        {
+          name : 'puissance',
           type : 'checkbox',
-          lienDonnees: 'http://localhost:52195/Boitedevitesse'
+          lienDonnees: 'http://localhost:52195/Puissance',
+          optionValue:
+          {
+            mainValue : "idpuissance",
+            frontValue : "kw"
+          }
         }    
       ]
     },
