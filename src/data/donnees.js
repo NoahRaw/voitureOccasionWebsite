@@ -4,16 +4,17 @@
       formulaireTitle : 'Insertion de description',
       jsonValue : 
       {
-        idboitedevitesse: 0,
-        description: '',
+        idboitedevitesse : 0,
+        description: 'bobo',
       },
       lien : 'http://localhost:52195/Boitedevitesse',
       listInput : 
       [
         {
           name : 'description',
-          type : 'text',
-        }       
+          type : 'checkbox',
+          lienDonnees: 'http://localhost:52195/Boitedevitesse'
+        }    
       ]
     },
     {
