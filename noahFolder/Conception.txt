@@ -1,0 +1,8 @@
+Header
+    lien
+Body
+    Formulaire
+    Liste
+    Graphe
+    Tableau
+Footer
