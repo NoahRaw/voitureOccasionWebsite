@@ -32,6 +32,23 @@
           type : 'text',
         }       
       ]
+    },
+    {
+      formulaireId : 'be',
+      formulaireTitle : 'Insertion de type de vehicule',
+      jsonValue : 
+      {
+        idTypeDeVehicule: 0,
+        description: '',
+      },
+      lien : 'http://localhost:52195/typeDeVehicules',
+      listInput : 
+      [
+        {
+          name : 'description',
+          type : 'text',
+        }       
+      ]
     }
   ]
 
