@@ -13,7 +13,7 @@
         {
           name : 'description',
           type : 'text',
-        }       
+        } 
       ]
     },
     {
@@ -50,9 +50,13 @@
       listInput : 
       [
         {
-          name : 'description',
+          name : 'email',
           type : 'text',
-        }       
+        },
+        {
+          name : 'mot de passe',
+          type : 'text',
+        }          
       ]
     }
   ]
