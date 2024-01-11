@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Formulaire from './composant/Formulaire.js';
 import FormulaireCompliqueExemple from './composant/FormulaireCompliqueExemple.js';
+import FormPhotoDeVehicule from './composant/PhotoDeVehicule_insert.js';
 import donnees from './data/donnees.js';
 
 export default function name(params) {
@@ -18,7 +19,8 @@ export default function name(params) {
       )
     ))}
     
-    <FormulaireCompliqueExemple />
+  
+    <FormPhotoDeVehicule/>
     </div>
   );
 }
