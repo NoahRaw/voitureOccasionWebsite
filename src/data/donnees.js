@@ -13,24 +13,28 @@
         {
           name : 'description',
           type : 'text',
-        }       
+        } 
       ]
     },
     {
-      formulaireId : 'bc',
-      formulaireTitle : 'Insertion de description 2',
+      formulaireId : 'f1',
+      formulaireTitle : 'sign up',
       jsonValue : 
       {
-        idboitedevitesse: 0,
-        description: '',
+        email: '',
+        mdp: '',
       },
-      lien : 'http://localhost:52195/Boitedevitesse',
+      lien : 'http://localhost:52195/Utilisateur/create',
       listInput : 
       [
         {
-          name : 'description',
+          name : 'email',
           type : 'text',
-        }       
+        },
+        {
+          name : 'mot de passe',
+          type : 'text',
+        }          
       ]
     }
   ]
