@@ -5,7 +5,7 @@ import donnees from './data/donnees.js';
 
 export default function name(params) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [formulaireName, setFormulaireName] = useState('puissance');
+  const [formulaireName, setFormulaireName] = useState('be');
   return (
     // <div>
     //   <Formulaire formulaire={donnees} />
