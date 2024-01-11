@@ -1,7 +1,7 @@
   const formulaire = [
     {
-      formulaireId : 'bd',
-      formulaireTitle : 'Insertion de description',
+      formulaireId : 'boiteDeVitesse',
+      formulaireTitle : 'Insertion de boite de vitesse',
       jsonValue : 
       {
         idboitedevitesse: 0,
@@ -17,14 +17,36 @@
       ]
     },
     {
-      formulaireId : 'bc',
-      formulaireTitle : 'Insertion de description 2',
+      formulaireId : 'puissance',
+      formulaireTitle : 'Insertion de puissance',
       jsonValue : 
       {
-        idboitedevitesse: 0,
-        description: '',
+        idpuissance: 0,
+        kw: 1.0,
+        cv: 2.0
       },
-      lien : 'http://localhost:52195/Boitedevitesse',
+      lien : 'http://localhost:52195/Puissance',
+      listInput : 
+      [
+        {
+          name : 'kw',
+          type : 'number',
+        },     
+        {
+          name : 'cv',
+          type : 'number',
+        }  
+      ]
+    },
+    {
+      formulaireId : 'modele',
+      formulaireTitle : 'Insertion de boite de modele',
+      jsonValue : 
+      {
+        idmodele: 0,
+        description: ''      
+      },
+      lien : 'http://localhost:52195/Modele',
       listInput : 
       [
         {
