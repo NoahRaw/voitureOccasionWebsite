@@ -1,25 +1,5 @@
 import React, { useState } from 'react';
 import Formulaire from './composant/Formulaire.js';
-<<<<<<< Updated upstream
-import AllAnnonce from './composant/annonce/AllAnnonce.js';
-import donnees from './data/donnees.js';
-
-const App = () => {
-  const [selectedDate, setSelectedDate] = useState({
-    dateDebut: '2023-03-19',
-    dateFin: '2025-01-06',
-  });
-
-  return (
-    <div>
-      <h1>Your App Title</h1>
-      <AllAnnonce/>
-    </div>
-  );
-};
-
-export default App;
-=======
 import Login from './composant/formulaire/Login.js';
 import FormulaireRevenueUtilisateur from './composant/formulaire/FormulaireRevenueUtilisateur.js';
 
@@ -110,4 +90,3 @@ export default function App(params) {
     </div>
   );
 }
->>>>>>> Stashed changes
