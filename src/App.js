@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
 import Formulaire from './composant/Formulaire.js';
-import VoitureDefini_insertion from './composant/VoitureDefini_insertion.js';
+import AllAnnonce from './composant/annonce/AllAnnonce.js';
 import donnees from './data/donnees.js';
 
-export default function name(params) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [formulaireName, setFormulaireName] = useState('be');
-  return (
-    // <div>
-    //   <Formulaire formulaire={donnees} />
-    // </div>
+const App = () => {
+  const [selectedDate, setSelectedDate] = useState({
+    dateDebut: '2023-03-19',
+    dateFin: '2025-01-06',
+  });
 
+  return (
     <div>
-    {donnees.map((form, index) => (
-      form.formulaireId === formulaireName && (
-        <Formulaire formulaire={form} />
-      )
-    ))}
-    
-    <VoitureDefini_insertion />
+      <h1>Your App Title</h1>
+      <AllAnnonce/>
     </div>
   );
-}
+};
+
+export default App;
