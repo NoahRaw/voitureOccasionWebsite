@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AuthComponent = () => {
+const AuthComponent = ({setIsConnected}) => {
   const [token, setToken] = useState('');
   const [login, setLogin] = useState('');
   const [pwd, setPwd] = useState('');
@@ -16,6 +16,9 @@ const AuthComponent = () => {
         const data = await response.text();
         const authToken = data; // Assurez-vous d'adapter cela à la structure de la réponse du service webi
         setToken(authToken);
+        if(authToken){
+            setIsConnected(true);
+        }
 
         // Stockage dans le localStorage
         localStorage.setItem('authToken', authToken);
