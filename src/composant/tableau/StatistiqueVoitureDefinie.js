@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import BarChart from "../chart/BarChart";
 
 const UserDataComponent = ({date}) => {
   const [userData, setUserData] = useState([]);
+  const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
     console.log(`${date.dateDebut} ou ${date.dateFin}`);
@@ -12,6 +14,24 @@ const UserDataComponent = ({date}) => {
         if (response.ok) {
           const data = await response.json();
           setUserData(data); // Mettez à jour l'état avec les données récupérées
+          setChartData({
+            labels: data.map((data) => `${data.nomMarque} - ${data.nomModele}`),
+            datasets: [
+            {
+                label: "Statistique voiture le plus vendu",
+                data: data.map((data) => data.nombre),
+                backgroundColor: [
+                "rgba(75,192,192,1)",
+                "#ecf0f1",
+                "#50AF95",
+                "#f3ba2f",
+                "#2a71d0",
+                ],
+                borderColor: "black",
+                borderWidth: 2,
+            },
+            ],
+        })
         } else {
           console.error('Erreur lors de la requête HTTP:', response.statusText);
         }
@@ -25,7 +45,12 @@ const UserDataComponent = ({date}) => {
 
   return (
     <div>
-      <h1>Liste des Utilisateurs</h1>
+      <div style={{ width: 700 }}>
+      {
+        chartData &&
+        <BarChart chartData={chartData} />
+      }
+      </div>
       <table>
         <thead>
           <tr>
