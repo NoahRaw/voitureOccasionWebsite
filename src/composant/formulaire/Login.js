@@ -2,23 +2,19 @@ import React, { useState } from 'react';
 
 const AuthComponent = () => {
   const [token, setToken] = useState('');
+  const [login, setLogin] = useState('');
+  const [pwd, setPwd] = useState('');
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
     try {
-      const response = await fetch('URL_DU_WEBSERVICE/authenticate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: 'votre_nom_utilisateur',
-          password: 'votre_mot_de_passe',
-        }),
+      const response = await fetch(`http://localhost:52195/Utilisateurs/authenticate?login=${login}&pwd=${pwd}`, {
+        method: 'GET',
       });
 
       if (response.ok) {
-        const data = await response.json();
-        const authToken = data.token; // Assurez-vous d'adapter cela à la structure de la réponse du service web
+        const data = await response.text();
+        const authToken = data; // Assurez-vous d'adapter cela à la structure de la réponse du service webi
         setToken(authToken);
 
         // Stockage dans le localStorage
@@ -33,9 +29,25 @@ const AuthComponent = () => {
 
   return (
     <div>
-      <h1>Authentification</h1>
-      <button onClick={handleLogin}>Se connecter</button>
-      {token && <p>Token : {token}</p>}
+      <h1>Login</h1>
+      <form onSubmit={handleLogin}>
+        <div>
+          <label>Identification</label>
+          <input
+            type="mail"
+            onChange={(e) => setLogin(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            onChange={(e) => setPwd(e.target.value)}
+          />
+        </div>
+        <button type="submit">Se connecter</button>
+      </form>
+      {token && console.log(token)}
     </div>
   );
 };

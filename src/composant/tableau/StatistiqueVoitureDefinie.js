@@ -7,7 +7,7 @@ const UserDataComponent = ({date}) => {
     console.log(`${date.dateDebut} ou ${date.dateFin}`);
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:52195/Boitedevitesse/utilisateur-revenue?dateDebut=${date.dateDebut}&dateFin=${date.dateFin}`);
+        const response = await fetch(`http://localhost:52195/VoitureDefiniStatView/liste/${date.dateDebut}/${date.dateFin}`);
 
         if (response.ok) {
           const data = await response.json();
@@ -29,15 +29,17 @@ const UserDataComponent = ({date}) => {
       <table>
         <thead>
           <tr>
-            <th>Nom Utilisateur</th>
-            <th>Revenue</th>
+            <th>Marque</th>
+            <th>Modele</th>
+            <th>Nombre</th>
           </tr>
         </thead>
         <tbody>
           {userData.map((user) => (
             <tr key={user.id}>
-              <td>{user.idutilisateur}</td>
-              <td>{user.revenue}</td>
+              <td>{user.nomMarque}</td>
+              <td>{user.nomModele}</td>
+              <td>{user.nombre}</td>
             </tr>
           ))}
         </tbody>
