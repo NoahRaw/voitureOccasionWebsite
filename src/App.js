@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Formulaire from './composant/Formulaire.js';
 import Login from './composant/formulaire/Login.js';
 import FormulaireRevenueUtilisateur from './composant/formulaire/FormulaireRevenueUtilisateur.js';
+import FormulaireStatVoitureDefinie from './composant/formulaire/FormulaireStatVoitureDefinie.js';
 import AllAnnonce from './composant/annonce/AllAnnonce.js';
 
 
@@ -10,6 +11,7 @@ const puissance = ({ formulaireName }) => <div><Formulaire formulaireName={formu
 const modele = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const login = () => <div><Login /></div>;
 const formulaireRevenueUtilisateur = () => <div><FormulaireRevenueUtilisateur /></div>;
+const formulaireStatVoitureDefinie = () => <div><FormulaireStatVoitureDefinie /></div>
 const allAnnonce = () => <div><AllAnnonce /></div>;
 
 
@@ -27,6 +29,7 @@ export default function App(params) {
     login: login,
     formulaireRevenueUtilisateur: formulaireRevenueUtilisateur,
     allAnnonce: allAnnonce,
+    formulaireStatVoitureDefinie: formulaireStatVoitureDefinie, 
   };
 
   const handleClick = async (componentKey,checkToken) => {
@@ -116,6 +119,9 @@ export default function App(params) {
           return <ComponentToRender />;
         case 'allAnnonce':
             return <ComponentToRender />;
+        case 'formulaireStatVoitureDefinie':
+          return <ComponentToRender />;
+
         default:
           return <ComponentToRender />;
       }
@@ -145,8 +151,8 @@ export default function App(params) {
             </a>
           </li>
           <li>
-            <a href="#" onClick={() => handleClick('VoitureDefini_insertion')}>
-              Insertion voiture defini
+            <a href="#" onClick={() => handleClick('formulaireStatVoitureDefinie',true)}>
+              Statistique voiture 
             </a>
           </li>
           <li>

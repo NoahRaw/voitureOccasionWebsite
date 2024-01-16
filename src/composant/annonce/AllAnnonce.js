@@ -30,6 +30,7 @@ const AllAnnonce = () => {
       {userData.map((user) => (
         <DetailAnnonce
           key={user.idvoitureutilisateur}
+          nomutilisateur={user.nomutilisateur}
           idvoitureutilisateur={user.idvoitureutilisateur}
           dateventedebut={user.dateventedebut}
           matricule={user.matricule}
