@@ -24,12 +24,76 @@ export default function App(params) {
     formulaireRevenueUtilisateur: formulaireRevenueUtilisateur,
   };
 
-  const handleClick = (componentKey) => {
+  const handleClick = async (componentKey,checkToken) => {
     setCurrentComponent(componentKey);
+
+    const authToken = localStorage.getItem('authToken');
+
+    if(authToken==null){
+      setIsConnected(false)
+    }
+    else if(checkToken==true){
+      try {
+        const response = await fetch(`http://localhost:52195/Utilisateurs/isTokenValide`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`,
+          },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          const boolean = data; // Assurez-vous d'adapter cela à la structure de la réponse du service webi
+          console.log('componentKey: ',boolean);
+
+          if(boolean==false){
+              setIsConnected(false);
+          }
+
+          // Stockage dans le localStorage
+          localStorage.setItem('authToken', authToken);
+        } else {
+          console.error('Erreur lors de l\'authentification');
+        }
+      } catch (error) {
+        console.error('Erreur lors de la requête HTTP:', error);
+      }
+    }
   };
 
-  const deconnection = (componentKey) => {
+  const deconnection = async (componentKey) => {
     setCurrentComponent(componentKey);
+
+    const authToken = localStorage.getItem('authToken');
+
+    try {
+      const response = await fetch(`http://localhost:52195/Utilisateurs/deconnection`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authToken}`,
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const boolean = data; // Assurez-vous d'adapter cela à la structure de la réponse du service webi
+        console.log('componentKey: ',boolean);
+
+        if(boolean==false){
+            setIsConnected(false);
+        }
+
+        // Stockage dans le localStorage
+        localStorage.setItem('authToken', authToken);
+      } else {
+        console.error('Erreur lors de l\'authentification');
+      }
+    } catch (error) {
+      console.error('Erreur lors de la requête HTTP:', error);
+    }
+    
     setIsConnected(false);
   };
 
@@ -59,17 +123,17 @@ export default function App(params) {
       {isConnected && (
         <ul>
           <li>
-            <a href="#" onClick={() => handleClick('boiteDeVitesse')}>
+            <a href="#" onClick={() => handleClick('boiteDeVitesse',true)}>
               Insertion Boite De Vitesse
             </a>
           </li>
           <li>
-            <a href="#" onClick={() => handleClick('puissance')}>
+            <a href="#" onClick={() => handleClick('puissance',true)}>
               Insertion de puissance
             </a>
           </li>
           <li>
-            <a href="#" onClick={() => handleClick('modele')}>
+            <a href="#" onClick={() => handleClick('modele',true)}>
               Insertion de modele
             </a>
           </li>
@@ -79,7 +143,7 @@ export default function App(params) {
             </a>
           </li>
           <li>
-            <a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur')}>
+            <a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur',true)}>
               Statistique revenue utilisateur
             </a>
           </li>
