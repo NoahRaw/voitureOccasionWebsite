@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function DetailAnnonce({ idvoitureutilisateur, dateventedebut, matricule, kilometrage, prix, nommarque, nommodele, nomcarburant, kw, cv, nomboitedevitesse, nomtypedevehicule, nbrporte, puissance, setUserData }) {
+export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dateventedebut, matricule, kilometrage, prix, nommarque, nommodele, nomcarburant, kw, cv, nomboitedevitesse, nomtypedevehicule, nbrporte, puissance, setUserData }) {
 
   const handleSubmit = async () => {
     // Vous pouvez maintenant effectuer votre appel à votre service Spring Boot ici
@@ -53,6 +53,7 @@ export default function DetailAnnonce({ idvoitureutilisateur, dateventedebut, ma
   return (
     <div className="">
       <div>
+        <p>{nomutilisateur}</p>
         <p>date : {dateventedebut}</p>
         <p>matricule : {matricule}</p>
         <p>kilometrage : {kilometrage}</p>
