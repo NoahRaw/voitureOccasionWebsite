@@ -45,6 +45,8 @@ export default function App(params) {
           return <ComponentToRender formulaireName={'modele'} />;
         case 'formulaireRevenueUtilisateur':
           return <ComponentToRender />;
+        case 'validationAnnonce':
+            return <ComponentToRender />;
         default:
           return <ComponentToRender />;
       }
@@ -81,6 +83,11 @@ export default function App(params) {
           <li>
             <a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur')}>
               Statistique revenue utilisateur
+            </a>
+          </li>
+          <li>
+            <a href="#" onClick={() => handleClick('validationAnnonce')}>
+              validation annonce
             </a>
           </li>
           <li>

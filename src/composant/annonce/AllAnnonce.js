@@ -34,6 +34,13 @@ const UserDataComponent = () => {
                 prix={user.prix}
                 nommarque={user.nommarque}
                 nommodele={user.nommodele}
+                nomcarburant={user.nomcarburant}
+                kw={user.kw}
+                cv={user.cv}
+                nomboitedevitesse={user.nomboitedevitesse}
+                nomtypedevehicule={nomtypedevehicule}
+                nbrporte={nbrporte}
+                puissance={puissance}
                 />
             ))}
         </div>
