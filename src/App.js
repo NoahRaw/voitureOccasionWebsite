@@ -74,6 +74,11 @@ export default function App(params) {
             </a>
           </li>
           <li>
+            <a href="#" onClick={() => handleClick('VoitureDefini_insertion')}>
+              Insertion voiture defini
+            </a>
+          </li>
+          <li>
             <a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur')}>
               Statistique revenue utilisateur
             </a>
