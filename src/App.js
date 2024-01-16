@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import Formulaire from './composant/Formulaire.js';
 import Login from './composant/formulaire/Login.js';
 import FormulaireRevenueUtilisateur from './composant/formulaire/FormulaireRevenueUtilisateur.js';
+import AllAnnonce from './composant/annonce/AllAnnonce.js';
+
 
 const boiteDeVitesse = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}></Formulaire></div>;
 const puissance = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}></Formulaire></div>;
 const modele = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const login = () => <div><Login /></div>;
 const formulaireRevenueUtilisateur = () => <div><FormulaireRevenueUtilisateur /></div>;
+const allAnnonce = () => <div><AllAnnonce /></div>;
+
 
 export default function App(params) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -22,6 +26,7 @@ export default function App(params) {
     modele: modele,
     login: login,
     formulaireRevenueUtilisateur: formulaireRevenueUtilisateur,
+    allAnnonce: allAnnonce,
   };
 
   const handleClick = async (componentKey,checkToken) => {
@@ -109,7 +114,7 @@ export default function App(params) {
           return <ComponentToRender formulaireName={'modele'} />;
         case 'formulaireRevenueUtilisateur':
           return <ComponentToRender />;
-        case 'validationAnnonce':
+        case 'allAnnonce':
             return <ComponentToRender />;
         default:
           return <ComponentToRender />;
@@ -150,7 +155,7 @@ export default function App(params) {
             </a>
           </li>
           <li>
-            <a href="#" onClick={() => handleClick('validationAnnonce')}>
+            <a href="#" onClick={() => handleClick('allAnnonce',true)}>
               validation annonce
             </a>
           </li>
