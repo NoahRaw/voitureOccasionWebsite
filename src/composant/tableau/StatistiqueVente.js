@@ -10,17 +10,16 @@ const UserDataComponent = ({date}) => {
     console.log(`${date.dateDebut} ou ${date.dateFin}`);
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:52195/Boitedevitesse/utilisateur-revenue?dateDebut=${date.dateDebut}&dateFin=${date.dateFin}`);
-
+        const response = await fetch(`http://localhost:52195/Statistique/ventes?dateDebut=${date.dateDebut}&dateFin=${date.dateFin}`);
         if (response.ok) {
           const data = await response.json();
           setUserData(data); // Mettez à jour l'état avec les données récupérées
           setChartData({
-            labels: data.map((data) => data.idutilisateur),
+            labels: data.map((data) => data.dateVente),
             datasets: [
             {
-                label: "Statistique revenue par utilisateur",
-                data: data.map((data) => data.revenue),
+                label: "Statistique commission",
+                data: data.map((data) => data.comission),
                 backgroundColor: [
                 "rgba(75,192,192,1)",
                 "#ecf0f1",
@@ -46,7 +45,7 @@ const UserDataComponent = ({date}) => {
 
   return (
     <div>
-      <h1>Statistique commission </h1>
+      <h1>Statistique commission</h1>
       <div style={{ width: 700 }}>
       {
         chartData &&
@@ -57,15 +56,15 @@ const UserDataComponent = ({date}) => {
       <table>
         <thead>
           <tr>
-            <th>Date</th>
-            <th>commission</th>
+            <th>Date vente</th>
+            <th>Commission</th>
           </tr>
         </thead>
         <tbody>
           {userData.map((user) => (
             <tr key={user.id}>
-              <td>{user.idutilisateur}</td>
-              <td>{user.revenue}</td>
+              <td>{user.dateVente}</td>
+              <td>{user.comission}</td>
             </tr>
           ))}
         </tbody>
