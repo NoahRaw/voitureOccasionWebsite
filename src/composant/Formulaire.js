@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import donnees from '../data/donnees.js';
 
-const App = ({formulaire}) => {
-  const [formData, setFormData] = useState(
-    formulaire.jsonValue
-  );
+const App = ({ formulaireName }) => {
+  const [formulaire, setFormulaire] = useState(null);
+  const [formData, setFormData] = useState({});
+
+  useEffect(() => {
+    // Recherche du formulaire correspondant au formulaireName
+    const foundFormulaire = donnees.find((form) => form.formulaireId === formulaireName);
+
+    if (foundFormulaire) {
+      setFormulaire(foundFormulaire);
+      setFormData(foundFormulaire.jsonValue);
+    }
+  }, [formulaireName]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +45,10 @@ const App = ({formulaire}) => {
     }
   };
 
+  if (!formulaire) {
+    return <div>Formulaire non trouvé</div>;
+  }
+
   const listInput = formulaire.listInput;
 
   return (
@@ -48,7 +62,7 @@ const App = ({formulaire}) => {
               <input
                 type={input.type}
                 name={input.name}
-                value={formData[input.name]}
+                value={formData[input.name] || ''}
                 onChange={handleInputChange}
               />
             </label>
@@ -62,4 +76,3 @@ const App = ({formulaire}) => {
 };
 
 export default App;
-
