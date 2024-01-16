@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 const FormPhotoDeVehicule = () => {
   // États pour stocker les valeurs des champs du formulaire
-  const [textInputValue, setTextInputValue] = useState('');
-  const [selectValue, setSelectValue] = useState('');
+  const [nomPhoto, setTextInputValue] = useState('');
+  const [idVoitureUtilisateur, setSelectValue] = useState('');
 
   // État pour stocker les options du menu déroulant récupérées du web service
   const [dropdownOptions, setDropdownOptions] = useState([]);
 
+  
   useEffect(() => {
     // Exemple de chargement des options depuis un web service
     const fetchDropdownOptions = async () => {
@@ -26,7 +27,7 @@ const FormPhotoDeVehicule = () => {
 
     fetchDropdownOptions();
   }, []); // La dépendance vide signifie que cette fonction s'exécute uniquement après le montage initial du composant
-
+////////////////////////////////////////////
   // Fonction pour gérer le changement de valeur du champ de texte
   const handleTextInputChange = (e) => {
     setTextInputValue(e.target.value);
@@ -37,27 +38,47 @@ const FormPhotoDeVehicule = () => {
     setSelectValue(e.target.value);
   };
 
-  // Fonction pour gérer la soumission du formulaire
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    // Vous pouvez utiliser les valeurs stockées dans les états ici pour effectuer des actions ou envoyer des données au backend
-    console.log('Text Input Value:', textInputValue);
-    console.log('Select Value:', selectValue);
-  };
+    // Fonction pour gérer la soumission du formulaire
+    const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+      // Vous pouvez maintenant effectuer votre appel à votre service Spring Boot ici
+      try {
+        const response = await fetch('http://localhost:52195/photoVoitureUtilisateurs', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            idVoitureUtilisateur : idVoitureUtilisateur,
+            nomPhoto: nomPhoto,
+          }),
+        });
+  
+        if (response.ok) {
+          // Gérez le succès de l'appel ici
+          console.log('Données soumises avec succès');
+        } else {
+          console.error('Erreur lors de la soumission des données:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Erreur lors de la soumission des données:', error);
+      }
+    };
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label>
           Text Input:
-          <input type="text" value={textInputValue} onChange={handleTextInputChange} />
+          <input type="text" value={nomPhoto} onChange={handleTextInputChange} />
         </label>
       </div>
       <div>
         <label>
           Select:
-          <select value={selectValue} onChange={handleSelectChange}>
+          <select value={idVoitureUtilisateur} onChange={handleSelectChange}>
             <option value="">Sélectionnez une option</option>
             {dropdownOptions.map((option) => (
               <option value={option.idvoitureutilisateur}>
