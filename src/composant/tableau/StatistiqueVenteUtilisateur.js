@@ -63,8 +63,8 @@ const UserDataComponent = ({date}) => {
         </thead>
         <tbody>
           {userData.map((user) => (
-            <tr key={user.id}>
-              <td>{user.idutilisateur}</td>
+            <tr key={user.idutilisateur}>
+              <td>{user.email}</td>
               <td>{user.nombredeventes}</td>
             </tr>
           ))}

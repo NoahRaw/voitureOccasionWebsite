@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import StatistiqueVenteUtilisateur from '..tableau/StatistiqueVenteUtilisateur.js';
+import StatistiqueVenteUtilisateur from '../tableau/StatistiqueVenteUtilisateur.js';
 
 const FormulaireStatVenteUtilisateur = ({ onFormSubmit }) => {
   const [startDate, setStartDate] = useState('');
@@ -29,7 +29,7 @@ const FormulaireStatVenteUtilisateur = ({ onFormSubmit }) => {
     // inputDate a le format "YYYY-MM-DD"
     const [year, month, day] = inputDate.split('-');
     // Formate la date en "DD-MM-YYYY"
-    return `${year}-${day}-${month}`;
+    return `${year}-${month}-${day}`;
   };
 
   return (
