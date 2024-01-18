@@ -3,15 +3,23 @@ import Formulaire from './composant/Formulaire.js';
 import Login from './composant/formulaire/Login.js';
 import FormulaireRevenueUtilisateur from './composant/formulaire/FormulaireRevenueUtilisateur.js';
 import FormulaireStatVoitureDefinie from './composant/formulaire/FormulaireStatVoitureDefinie.js';
+import FormulaireStatVenteUtilisateur from './composant/formulaire/FormulaireStatVenteUtilisateur.js'
 import AllAnnonce from './composant/annonce/AllAnnonce.js';
+
+import './App.css';
+import RightPanel from './composant/templateadmin/RightPanel .js';
 
 
 const boiteDeVitesse = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}></Formulaire></div>;
 const puissance = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}></Formulaire></div>;
 const modele = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
+const marque = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
+const carburant = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
+const comission = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const login = () => <div><Login /></div>;
 const formulaireRevenueUtilisateur = () => <div><FormulaireRevenueUtilisateur /></div>;
 const formulaireStatVoitureDefinie = () => <div><FormulaireStatVoitureDefinie /></div>
+const formulaireStatVenteUser = () => <div><FormulaireStatVenteUtilisateur /></div>
 const allAnnonce = () => <div><AllAnnonce /></div>;
 
 
@@ -30,6 +38,10 @@ export default function App(params) {
     formulaireRevenueUtilisateur: formulaireRevenueUtilisateur,
     allAnnonce: allAnnonce,
     formulaireStatVoitureDefinie: formulaireStatVoitureDefinie, 
+    formulaireStatVenteUser : formulaireStatVenteUser,
+    comission : comission,
+    marque : marque,
+    carburant: carburant,
   };
 
   const handleClick = async (componentKey,checkToken) => {
@@ -121,6 +133,14 @@ export default function App(params) {
             return <ComponentToRender />;
         case 'formulaireStatVoitureDefinie':
           return <ComponentToRender />;
+        case 'formulaireStatVenteUser':
+          return <ComponentToRender />;
+        case 'marque':
+          return <ComponentToRender formulaireName={'marque'}/>;
+        case 'carburant':
+          return <ComponentToRender formulaireName={'carburant'}/>;
+        case 'comission':
+          return <ComponentToRender formulaireName={'comission'}/>;
 
         default:
           return <ComponentToRender />;
@@ -134,45 +154,45 @@ export default function App(params) {
   return (
     <div>
       {isConnected && (
-        <ul>
-          <li>
-            <a href="#" onClick={() => handleClick('boiteDeVitesse',true)}>
-              Insertion Boite De Vitesse
-            </a>
-          </li>
-          <li>
-            <a href="#" onClick={() => handleClick('puissance',true)}>
-              Insertion de puissance
-            </a>
-          </li>
-          <li>
-            <a href="#" onClick={() => handleClick('modele',true)}>
-              Insertion de modele
-            </a>
-          </li>
-          <li>
-            <a href="#" onClick={() => handleClick('formulaireStatVoitureDefinie',true)}>
-              Statistique voiture 
-            </a>
-          </li>
-          <li>
-            <a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur',true)}>
-              Statistique revenue utilisateur
-            </a>
-          </li>
-          <li>
-            <a href="#" onClick={() => handleClick('allAnnonce',true)}>
-              validation annonce
-            </a>
-          </li>
-          <li>
-            <a href="#" onClick={() => deconnection('login')}>
-              Deconnexion
-            </a>
-          </li>
-        </ul>
-      )}
 
+        <div>
+          <RightPanel />  {/*Header*/}
+          <aside id="left-panel" className="left-panel">
+            <nav className="navbar navbar-expand-sm navbar-default">
+              <div id="main-menu" className="main-menu collapse navbar-collapse">
+                  <ul className="nav navbar-nav">
+                      <li className="active">
+                          <a href="#" onClick={() => deconnection('login')}><i className="menu-icon fa fa-laptop"></i>Deconnexion </a>
+                      </li>
+                      <li className="menu-title">Title</li>
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Insertion</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="" onClick={() => handleClick('boiteDeVitesse',true)}>Insertion boite de vitesse</a></li>
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('puissance',true)}>Insertion puissance</a></li>
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('marque',true)}>Insertion marque</a></li>
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('comission',true)}>Insertion commission</a></li>
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('carburant',true)}>Insertion carburant</a></li>
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('modele',true)}>Insertion modele</a></li>
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-th"></i>Statistique</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVoitureDefinie',true)}>Statistique voiture</a></li>
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur',true)}>Statistique revenue utilisateurr</a></li>
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVenteUser',true)}>Statistique rang de vente utilisateur</a></li>
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('allAnnonce',true)}>validation annonce</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+            </nav>
+          </aside>
+        </div>
+      )}
+      
       {renderComponent()}
     </div>
   );
