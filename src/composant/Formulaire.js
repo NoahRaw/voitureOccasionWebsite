@@ -52,25 +52,36 @@ const App = ({ formulaireName }) => {
   const listInput = formulaire.listInput;
 
   return (
-    <div>
-      <h1>{formulaire.formulaireTitle}</h1>
-      <form onSubmit={handleSubmit}>
-        {listInput.map((input, index) => (
-          <div key={index}>
-            <label>
-              {input.name.charAt(0).toUpperCase() + input.name.slice(1)}:
-              <input
-                type={input.type}
-                name={input.name}
-                value={formData[input.name] || ''}
-                onChange={handleInputChange}
-              />
-            </label>
-          </div>
-        ))}
-        <br />
-        <button type="submit">Envoyer</button>
-      </form>
+    <div className="col-lg-7" style={{marginLeft: 450, marginTop: 100}}>
+       <div className="card">
+           <div className="card-header">
+               <strong className="card-title">{formulaire.formulaireTitle}</strong>
+           </div>
+           <div className="card-body">
+               <div id="pay-invoice">
+                   <div className="card-body">
+                       <div className="card-title">
+                           <h3 className="text-center">{formulaire.formulaireTitle}</h3>
+                       </div>
+                       <hr/>
+                       <form onSubmit={handleSubmit}>
+                            {listInput.map((input, index) => (
+                             <div key={index} className="form-group">
+                                 <label for="cc-payment" className="control-label mb-1">{input.name.charAt(0).toUpperCase() + input.name.slice(1)}</label>
+                                 <input id="cc-payment" name={input.name} type={input.type}  value={formData[input.name] || ''} onChange={handleInputChange} className="form-control" required/>
+                             </div>
+                            ))}
+                           <div>
+                               <button id="payment-button" type="submit" className="btn btn-lg btn-info btn-block">
+                                   <span id="payment-button-amount">Valider</span>
+                               </button>
+                           </div>
+                       </form>
+                   </div>
+               </div>
+
+           </div>
+       </div> 
     </div>
   );
 };

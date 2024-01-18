@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../css/Login.css'
 
 const AuthComponent = ({setIsConnected}) => {
   const [token, setToken] = useState('');
@@ -32,25 +33,35 @@ const AuthComponent = ({setIsConnected}) => {
 
   return (
     <div>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Identification</label>
-          <input
-            type="mail"
-            onChange={(e) => setLogin(e.target.value)}
-          />
+    <section className="inscription_section" >
+      <div id="content">
+        <div className="row justify-content-center">
+          <div className="text-center">
+            <h2 className="heading">
+              Login
+            </h2>
+          </div>
         </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            onChange={(e) => setPwd(e.target.value)}
-          />
+        <div className="row justify-content-center">
+          <div className="formulaire">
+            <div className="padding-0">
+              <div className="row justify-content-center">
+                <div id="login-form">
+                  <form onSubmit={handleLogin}>
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="login" value={login} onChange={(e) => setLogin(e.target.value)} className="input" required /><br />
+                    <label htmlFor="password">Password</label>
+                    <input type="password" id="password"  value={pwd} onChange={(e) => setPwd(e.target.value)} className="input" required /><br />
+                    <button type="submit" id="submit-btn">Valider</button>
+                  </form>
+                  {token && console.log(token)}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <button type="submit">Se connecter</button>
-      </form>
-      {token && console.log(token)}
+      </div>
+    </section>
     </div>
   );
 };
