@@ -33,29 +33,41 @@ const DateRangeForm = ({ onFormSubmit }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Date de Début:</label>
-          <input
-            type="date"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Date de Fin:</label>
-          <input
-            type="date"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-          />
-        </div>
-        <button type="submit">Envoyer</button>
-      </form>
+    
+    <div className="col-lg-7" style={{marginLeft: 450, marginTop: 100}}>
+      <div className="card">
+          <div className="card-header">
+              <strong className="card-title">Formulaire de statistique</strong>
+          </div>
+          <div className="card-body">
+              <div id="pay-invoice">
+                  <div className="card-body">
+                      <div className="card-title">
+                          <h3 className="text-center">Statistique voiture definie</h3>
+                      </div>
+                      <hr/>
+                      <form onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label for="cc-payment" className="control-label mb-1">Date de Début:</label>
+                                <input id="cc-payment" type="date"  value={startDate}  onChange={(e) => setStartDate(e.target.value)} className="form-control" required/>
+                            </div>
+                            <div className="form-group">
+                                <label for="cc-payment" className="control-label mb-1">Date Fin:</label>
+                                <input id="cc-payment" type="date"  value={endDate}  onChange={(e) => setEndDate(e.target.value)} className="form-control" required/>
+                            </div>
+                          <div>
+                              <button id="payment-button" type="submit" className="btn btn-lg btn-info btn-block">
+                                  <span id="payment-button-amount">Valider</span>
+                              </button>
+                          </div>
+                      </form>
+                      {/* Affichez le composant tableau si le formulaire a été soumis */}
+                      {formSubmitted && <StatistiqueVoitureDefinie key={key} date={date} />}
+                  </div>
+              </div>
 
-      {/* Affichez le composant tableau si le formulaire a été soumis */}
-      {formSubmitted && <StatistiqueVoitureDefinie key={key} date={date} />}
+          </div>
+      </div> 
     </div>
   );
 };

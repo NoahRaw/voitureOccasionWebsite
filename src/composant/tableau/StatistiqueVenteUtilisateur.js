@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BarChart from "../chart/BarChart";
 
-const UserDataComponent = ({date}) => {
+const StatistiqueVenteUtilisateur = ({date}) => {
   const [userData, setUserData] = useState([]);
 
   const [chartData, setChartData] = useState(null);
@@ -46,32 +46,47 @@ const UserDataComponent = ({date}) => {
 
   return (
     <div>
-      <h1>Statistique de vente de voiture par utilisateur</h1>
+      
       <div style={{ width: 700 }}>
       {
         chartData &&
         <BarChart chartData={chartData} />
       }
       </div>
+      
+      <div class="content"/>
+            <div class="animated fadeIn">
+                <div class="row">
 
-      <table>
-        <thead>
-          <tr>
-            <th>Email Utilisateur</th>
-            <th>Nombre de vente</th>
-          </tr>
-        </thead>
-        <tbody>
-          {userData.map((user) => (
-            <tr key={user.idutilisateur}>
-              <td>{user.email}</td>
-              <td>{user.nombredeventes}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Data Table</strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Email Utilisateur</th>
+                                            <th>Nombre de vente</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      {userData.map((user) => (
+                                          <tr key={user.idutilisateur}>
+                                              <td>{user.email}</td>
+                                              <td>{user.nombredeventes}</td>
+                                          </tr>
+                                        ))}
+                                    </tbody>
+                                  </table>
+                              </div>
+                        </div>
+                    </div>
+              </div>
+          </div>
+      </div>
   );
 };
 
-export default UserDataComponent;
+export default StatistiqueVenteUtilisateur;
