@@ -29,7 +29,7 @@ const DateRangeForm = ({ onFormSubmit }) => {
     // inputDate a le format "YYYY-MM-DD"
     const [year, month, day] = inputDate.split('-');
     // Formate la date en "DD-MM-YYYY"
-    return `${year}-${day}-${month}`;
+    return `${year}-${month}-${day}`;
   };
 
   return (
