@@ -67,6 +67,7 @@ const StatistiqueVenteUtilisateur = ({date}) => {
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
+                                            <th>Nom</th>
                                             <th>Email Utilisateur</th>
                                             <th>Nombre de vente</th>
                                         </tr>
@@ -74,6 +75,7 @@ const StatistiqueVenteUtilisateur = ({date}) => {
                                     <tbody>
                                       {userData.map((user) => (
                                           <tr key={user.idutilisateur}>
+                                              <td>{user.nomutilisateur}</td>
                                               <td>{user.email}</td>
                                               <td>{user.nombredeventes}</td>
                                           </tr>
