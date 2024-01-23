@@ -5,7 +5,7 @@ const DateRangeForm = ({ onFormSubmit }) => {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [date, setDate] = useState({ dateDebut: '2025-01-09', dateFin: '2025-01-09' });
+  const [date, setDate] = useState({ dateDebut: '2025-01-06', dateFin: '2025-01-10' });
   const [key, setKey] = useState(0);
 
   const handleSubmit = (e) => {

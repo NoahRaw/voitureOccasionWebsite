@@ -16,7 +16,7 @@ const modele = ({ formulaireName }) => <div><Formulaire formulaireName={formulai
 const marque = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const carburant = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const comission = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
-const login = () => <div><Login /></div>;
+const login = ({ setIsConnected }) => <div><Login setIsConnected={setIsConnected} /></div>;
 const formulaireRevenueUtilisateur = () => <div><FormulaireRevenueUtilisateur /></div>;
 const formulaireStatVoitureDefinie = () => <div><FormulaireStatVoitureDefinie /></div>
 const formulaireStatVenteUser = () => <div><FormulaireStatVenteUtilisateur /></div>
@@ -28,7 +28,12 @@ export default function App(params) {
   const [currentComponent, setCurrentComponent] = useState('boiteDeVitesse');
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [isConnected, setIsConnected] = useState(false);
+  const [isConnected, setIsConnected] = useState(true);
+  const authToken = localStorage.getItem('authToken');
+
+    if(authToken==null){
+      setIsConnected(false)
+    }
 
   const components = {
     boiteDeVitesse: boiteDeVitesse,
@@ -141,9 +146,8 @@ export default function App(params) {
           return <ComponentToRender formulaireName={'carburant'}/>;
         case 'comission':
           return <ComponentToRender formulaireName={'comission'}/>;
-
         default:
-          return <ComponentToRender />;
+          return <ComponentToRender formulaireName={'comission'}/>;
       }
     } else {
       // Si l'utilisateur n'est pas connecté, afficher le composant de connexion

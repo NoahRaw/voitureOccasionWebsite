@@ -10,13 +10,13 @@ const UserDataComponent = ({date}) => {
     console.log(`${date.dateDebut} ou ${date.dateFin}`);
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:52195/Boitedevitesse/utilisateur-revenue?dateDebut=${date.dateDebut}&dateFin=${date.dateFin}`);
+        const response = await fetch(`http://localhost:52195/Utilisateurs/revenue?dateDebut=${date.dateDebut}&dateFin=${date.dateFin}`);
 
         if (response.ok) {
           const data = await response.json();
           setUserData(data); // Mettez à jour l'état avec les données récupérées
           setChartData({
-            labels: data.map((data) => data.idutilisateur),
+            labels: data.map((data) => data.nomutilisateur),
             datasets: [
             {
                 label: "Statistique revenue par utilisateur",
@@ -46,7 +46,6 @@ const UserDataComponent = ({date}) => {
 
   return (
     <div>
-      <h1>Statistique revenue par utilisateur</h1>
       <div style={{ width: 700 }}>
       {
         chartData &&
@@ -54,22 +53,37 @@ const UserDataComponent = ({date}) => {
       }
       </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Nom Utilisateur</th>
-            <th>Revenue</th>
-          </tr>
-        </thead>
-        <tbody>
-          {userData.map((user) => (
-            <tr key={user.id}>
-              <td>{user.idutilisateur}</td>
-              <td>{user.revenue}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div class="content"/>
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Data Table</strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>Nom Utilisateur</th>
+                                    <th>Revenue</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {userData.map((user) => (
+                                    <tr key={user.id}>
+                                      <td>{user.nomutilisateur}</td>
+                                      <td>{user.revenue}</td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
   );
 };
