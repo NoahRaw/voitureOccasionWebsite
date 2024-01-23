@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import '../../css/DetailProduct.css';
+
 
 export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dateventedebut, matricule, kilometrage, prix, nommarque, nommodele, nomcarburant, kw, cv, nomboitedevitesse, nomtypedevehicule, nbrporte, puissance, setUserData }) {
 
@@ -44,6 +46,31 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
     }
   };
 
+
+  const [voiturePhoto, setVoiturePhoto] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`http://localhost:52195/photoVoitureUtilisateurs/getPhotoVoitureUtilisateur/${idvoitureutilisateur}`);
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data);
+
+          setVoiturePhoto(data); // Mettez à jour l'état avec les données récupérées
+        } else {
+          console.error('Erreur lors de la requête HTTP:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Erreur lors de la requête HTTP:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
   const [estVisible, setEstVisible] = useState(false);
 
   const handleClick = () => {
@@ -51,8 +78,15 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
   };
 
   return (
-    <div className="">
+    <div className="DetailProduct card">
       <div>
+
+        <div className="imagePrincipale">
+        {voiturePhoto.map((photo) => (
+            <img src={`img/${photo.nomPhoto}`} alt="Description de l'image" width="200" height="150"></img>
+        ))}
+        </div>
+
         <p>{nomutilisateur}</p>
         <p>date : {dateventedebut}</p>
         <p>matricule : {matricule}</p>
