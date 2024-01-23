@@ -44,6 +44,29 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
     }
   };
 
+
+  const [voiturePhoto, setVoiturePhoto] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`http://localhost:52195/photoVoitureUtilisateurs/getPhotoVoitureUtilisateur/${idvoitureutilisateur}`);
+
+        if (response.ok) {
+          const data = await response.json();
+          setVoiturePhoto(data); // Mettez à jour l'état avec les données récupérées
+        } else {
+          console.error('Erreur lors de la requête HTTP:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Erreur lors de la requête HTTP:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
   const [estVisible, setEstVisible] = useState(false);
 
   const handleClick = () => {
@@ -53,6 +76,13 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
   return (
     <div className="">
       <div>
+
+        <div>
+        {voiturePhoto.map((photo) => (
+            <img src={`img/${photo.nomPhoto}`} alt="Description de l'image" width={100} height={100}></img>
+        ))}
+        </div>
+
         <p>{nomutilisateur}</p>
         <p>date : {dateventedebut}</p>
         <p>matricule : {matricule}</p>
