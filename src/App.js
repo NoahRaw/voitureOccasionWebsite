@@ -20,7 +20,7 @@ const login = ({ setIsConnected }) => <div><Login setIsConnected={setIsConnected
 const formulaireRevenueUtilisateur = () => <div><FormulaireRevenueUtilisateur /></div>;
 const formulaireStatVoitureDefinie = () => <div><FormulaireStatVoitureDefinie /></div>
 const formulaireStatVenteUser = () => <div><FormulaireStatVenteUtilisateur /></div>
-const allAnnonce = () => <div><AllAnnonce /></div>;
+const allAnnonce = () => <div className="conten"><AllAnnonce /></div>;
 
 
 export default function App(params) {
@@ -187,8 +187,12 @@ export default function App(params) {
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVoitureDefinie',true)}>Statistique voiture</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur',true)}>Statistique revenue utilisateurr</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVenteUser',true)}>Statistique rang de vente utilisateur</a></li>
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('allAnnonce',true)}>validation annonce</a></li>
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce </a></li>
+
                           </ul>
+                      </li>
+                      <li>
+                          <a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce </a>
                       </li>
                   </ul>
               </div>

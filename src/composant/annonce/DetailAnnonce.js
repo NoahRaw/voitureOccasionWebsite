@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import '../../css/DetailProduct.css';
+
 
 export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dateventedebut, matricule, kilometrage, prix, nommarque, nommodele, nomcarburant, kw, cv, nomboitedevitesse, nomtypedevehicule, nbrporte, puissance, setUserData }) {
 
@@ -54,6 +56,8 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
 
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
+
           setVoiturePhoto(data); // Mettez à jour l'état avec les données récupérées
         } else {
           console.error('Erreur lors de la requête HTTP:', response.statusText);
@@ -74,12 +78,12 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
   };
 
   return (
-    <div className="">
+    <div className="DetailProduct card">
       <div>
 
-        <div>
+        <div className="imagePrincipale">
         {voiturePhoto.map((photo) => (
-            <img src={`img/${photo.nomPhoto}`} alt="Description de l'image" width={100} height={100}></img>
+            <img src={`img/${photo.nomPhoto}`} alt="Description de l'image" width="200" height="150"></img>
         ))}
         </div>
 
