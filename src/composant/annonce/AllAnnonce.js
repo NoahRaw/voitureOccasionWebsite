@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DetailAnnonce from './DetailAnnonce';
+import '../../css/AllProducts.css';
+
 
 const AllAnnonce = () => {
   const [userData, setUserData] = useState([]);
@@ -26,7 +28,7 @@ const AllAnnonce = () => {
 
 
   return (
-    <div>
+    <div className="AllProducts">
       {userData.map((user) => (
         <DetailAnnonce
           key={user.idvoitureutilisateur}
