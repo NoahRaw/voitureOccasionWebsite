@@ -16,23 +16,24 @@ const modele = ({ formulaireName }) => <div><Formulaire formulaireName={formulai
 const marque = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const carburant = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const comission = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
-const login = ({ setIsConnected }) => <div><Login setIsConnected={setIsConnected} /></div>;
+const login = ({setIsConnected}) => <div><Login setIsConnected={setIsConnected}/></div>;
 const formulaireRevenueUtilisateur = () => <div><FormulaireRevenueUtilisateur /></div>;
-const formulaireStatVoitureDefinie = () => <div><FormulaireStatVoitureDefinie /></div>
-const formulaireStatVenteUser = () => <div><FormulaireStatVenteUtilisateur /></div>
+const formulaireStatVoitureDefinie = () => <div><FormulaireStatVoitureDefinie /></div>;
+const formulaireStatVenteUser = () => <div><FormulaireStatVenteUtilisateur /></div>;
 const allAnnonce = () => <div className="conten"><AllAnnonce /></div>;
 
 
 export default function App(params) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [currentComponent, setCurrentComponent] = useState('boiteDeVitesse');
+  const [currentComponent, setCurrentComponent] = useState('comission');
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [isConnected, setIsConnected] = useState(true);
+  const [isConnected, setIsConnected] = useState(false);
   const authToken = localStorage.getItem('authToken');
+  // alert(authToken);
 
-    if(authToken==null){
-      setIsConnected(false)
+    if(authToken!=null && isConnected===false){
+      setIsConnected(true)
     }
 
   const components = {
@@ -57,7 +58,7 @@ export default function App(params) {
     if(authToken==null){
       setIsConnected(false)
     }
-    else if(checkToken==true){
+    else if(checkToken===true){
       try {
         const response = await fetch(`http://localhost:52195/Utilisateurs/isTokenValide`, {
           method: 'GET',
@@ -72,12 +73,12 @@ export default function App(params) {
           const boolean = data; // Assurez-vous d'adapter cela à la structure de la réponse du service webi
           console.log('componentKey: ',boolean);
 
-          if(boolean==false){
+          if(boolean===false){
               setIsConnected(false);
+              // Stockage dans le localStorage
+              localStorage.removeItem('authToken');
           }
 
-          // Stockage dans le localStorage
-          localStorage.setItem('authToken', authToken);
         } else {
           console.error('Erreur lors de l\'authentification');
         }
@@ -89,37 +90,25 @@ export default function App(params) {
 
   const deconnection = async (componentKey) => {
     setCurrentComponent(componentKey);
-
     const authToken = localStorage.getItem('authToken');
 
     try {
       const response = await fetch(`http://localhost:52195/Utilisateurs/deconnection`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${authToken}`,
-        },
+        }
       });
 
       if (response.ok) {
-        const data = await response.json();
-        const boolean = data; // Assurez-vous d'adapter cela à la structure de la réponse du service webi
-        console.log('componentKey: ',boolean);
-
-        if(boolean==false){
-            setIsConnected(false);
-        }
-
-        // Stockage dans le localStorage
-        localStorage.setItem('authToken', authToken);
-      } else {
-        console.error('Erreur lors de l\'authentification');
+        localStorage.removeItem('authToken');
+        setIsConnected(false);
       }
+
     } catch (error) {
       console.error('Erreur lors de la requête HTTP:', error);
     }
-    
-    setIsConnected(false);
   };
 
   const renderComponent = () => {
