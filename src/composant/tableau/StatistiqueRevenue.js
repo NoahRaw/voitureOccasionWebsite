@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BarChart from "../chart/BarChart";
 
-const UserDataComponent = ({date}) => {
+const StatistiqueRevenue = ({date}) => {
   const [userData, setUserData] = useState([]);
 
   const [chartData, setChartData] = useState(null);
@@ -42,7 +42,7 @@ const UserDataComponent = ({date}) => {
     };
 
     fetchData();
-  }, []); // Le tableau vide en tant que dépendance signifie que cette requête sera effectuée une seule fois lors du montage du composant.
+  }, [date.dateDebut, date.dateFin]); // Le tableau vide en tant que dépendance signifie que cette requête sera effectuée une seule fois lors du montage du composant.
 
   return (
     <div>
@@ -88,4 +88,4 @@ const UserDataComponent = ({date}) => {
   );
 };
 
-export default UserDataComponent;
+export default StatistiqueRevenue;

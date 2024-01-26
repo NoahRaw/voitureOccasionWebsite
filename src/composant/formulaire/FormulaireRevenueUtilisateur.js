@@ -33,46 +33,40 @@ const DateRangeForm = ({ onFormSubmit }) => {
   };
 
   return (
-    <div id="right-panel" class="right-panel">
-      <div class="content">
-        <div class="animated fadeIn">
-          <div className="col-lg-10">
-            <div className="card">
-                <div className="card-header">
-                    <strong className="card-title">Formulaire de statistique</strong>
-                </div>
-                <div className="card-body">
-                    <div id="pay-invoice">
-                        <div className="card-body">
-                            <div className="card-title">
-                                <h3 className="text-center">Statistique utilisateur qui ont fournis plus de revenus</h3>
-                            </div>
-                            <hr/>
-                            <form onSubmit={handleSubmit}>
-                                  <div className="form-group">
-                                      <label for="cc-payment" className="control-label mb-1">Date de Début:</label>
-                                      <input id="cc-payment" type="date"  value={startDate}  onChange={(e) => setStartDate(e.target.value)} className="form-control" required/>
-                                  </div>
-                                  <div className="form-group">
-                                      <label for="cc-payment" className="control-label mb-1">Date Fin:</label>
-                                      <input id="cc-payment" type="date"  value={endDate}  onChange={(e) => setEndDate(e.target.value)} className="form-control" required/>
-                                  </div>
-                                <div>
-                                    <button id="payment-button" type="submit" className="btn btn-lg btn-info btn-block">
-                                        <span id="payment-button-amount">Valider</span>
-                                    </button>
-                                </div>
-                            </form>
-                            {/* Affichez le composant tableau si le formulaire a été soumis */}
-                            {formSubmitted && <StatistiqueRevenue key={key} date={date} />}
-                        </div>
-                    </div>
-
-                </div>
-            </div> 
+    <div className="col-lg-7" style={{marginLeft: 450, marginTop: 100}}>
+      <div className="card">
+          <div className="card-header">
+              <strong className="card-title">Formulaire de statistique</strong>
           </div>
-        </div>
-      </div>
+          <div className="card-body">
+              <div id="pay-invoice">
+                  <div className="card-body">
+                      <div className="card-title">
+                          <h3 className="text-center">Statistique utilisateur qui ont fournis plus de revenus</h3>
+                      </div>
+                      <hr/>
+                      <form onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label for="cc-payment" className="control-label mb-1">Date de Début:</label>
+                                <input id="cc-payment" type="date"  value={startDate}  onChange={(e) => setStartDate(e.target.value)} className="form-control" required/>
+                            </div>
+                            <div className="form-group">
+                                <label for="cc-payment" className="control-label mb-1">Date Fin:</label>
+                                <input id="cc-payment" type="date"  value={endDate}  onChange={(e) => setEndDate(e.target.value)} className="form-control" required/>
+                            </div>
+                          <div>
+                              <button id="payment-button" type="submit" className="btn btn-lg btn-info btn-block">
+                                  <span id="payment-button-amount">Valider</span>
+                              </button>
+                          </div>
+                      </form>
+                      {/* Affichez le composant tableau si le formulaire a été soumis */}
+                      {formSubmitted && <StatistiqueRevenue key={key} date={date} />}
+                  </div>
+              </div>
+
+          </div>
+      </div> 
     </div>
   );
 };

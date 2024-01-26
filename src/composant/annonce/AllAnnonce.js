@@ -5,7 +5,6 @@ import '../../css/AllProducts.css';
 
 const AllAnnonce = () => {
   const [userData, setUserData] = useState([]);
-  const [key, setKey] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {

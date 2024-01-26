@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import Formulaire from './composant/Formulaire.js';
 import Login from './composant/formulaire/Login.js';

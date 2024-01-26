@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 // RightPanel.js
 import React from 'react';
 import '../../css/RightPanel.css'

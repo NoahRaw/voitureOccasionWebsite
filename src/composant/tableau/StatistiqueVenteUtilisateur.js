@@ -30,7 +30,7 @@ const StatistiqueVenteUtilisateur = ({date}) => {
                 ],
                 borderColor: "black",
                 borderWidth: 2,
-            },1
+            },
             ],
         })
         } else {
@@ -42,8 +42,7 @@ const StatistiqueVenteUtilisateur = ({date}) => {
     };
 
     fetchData();
-  }, []); // Le tableau vide en tant que dépendance signifie que cette requête sera effectuée une seule fois lors du montage du composant.
-
+  }, [date.dateDebut, date.dateFin]); // Le tableau vide en tant que dépendance signifie que cette requête sera effectuée une seule fois lors du montage du composant.
   return (
     <div>
       
