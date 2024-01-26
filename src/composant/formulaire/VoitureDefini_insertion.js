@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 const MyForm = () => {
   // États pour stocker les valeurs des champs du formulaire
-  const [textInputValue, setTextInputValue] = useState('');
   const [idmarque, setSelectIdMarque] = useState('');
   const [idmodele, setSelectIdModele] = useState('');
   const [idcarburant, setSelectIdCarburant] = useState('');
@@ -41,7 +40,7 @@ const MyForm = () => {
   useEffect(() => {
     const fetchDropdownMarque = async () => {
       try {
-        const response = await fetch('http://localhost:52195/Marque/read');
+        const response = await fetch('http://localhost:52195/Marque');
         if (response.ok) {
           const options = await response.json();
           setDropdownMarque(options);
@@ -82,7 +81,7 @@ const MyForm = () => {
   useEffect(() => {
     const fetchDropdownCarburant = async () => {
       try {
-        const response = await fetch('http://localhost:52195/Carburant/read');
+        const response = await fetch('http://localhost:52195/Carburant');
         if (response.ok) {
           const options = await response.json();
           setDropdownCarburant(options);
@@ -137,11 +136,6 @@ const MyForm = () => {
 
     fetchDropdownTypeVehicule();
   }, []); 
-
-  // Fonction pour gérer le changement de valeur du champ de texte
-  const handleTextInputChange = (e) => {
-    setTextInputValue(e.target.value);
-  };
 
   const handleTextMarque = (e) => {
     setSelectIdMarque(e.target.value);
@@ -218,7 +212,7 @@ const MyForm = () => {
           <select value={idmarque} onChange={handleTextMarque}>
             <option value="">Sélectionnez une option</option>
             {dropdownMarque.map((option) => (
-              <option value={option.idboitedevitesse}>
+              <option value={option.id_marque}>
                 {option.description}
               </option>
             ))}
@@ -232,7 +226,7 @@ const MyForm = () => {
           <select value={idmodele} onChange={handleTextModele}>
             <option value="">Sélectionnez une option</option>
             {dropdownModele.map((option) => (
-              <option value={option.idmarque}>
+              <option value={option.idmodele}>
                 {option.description}
               </option>
             ))}
@@ -246,7 +240,7 @@ const MyForm = () => {
           <select value={idcarburant} onChange={handleTextCarburant}>
             <option value="">Sélectionnez une option</option>
             {dropdownCarburant.map((option) => (
-              <option value={option.idcarburant}>
+              <option value={option.id_carburant}>
                 {option.description}
               </option>
             ))}
