@@ -9,6 +9,7 @@ import FormulaireStatVente from './composant/formulaire/FormulaireStatVente.js';
 
 import AllAnnonce from './composant/annonce/AllAnnonce.js';
 import VoitureDefini from './composant/formulaire/VoitureDefini_insertion.js';
+import TableauDynamique from './composant/tableau/TableauDynamique';
 
 import './App.css';
 import RightPanel from './composant/templateadmin/RightPanel .js';
@@ -28,6 +29,7 @@ const formulaireStatVenteUser = () => <div><FormulaireStatVenteUtilisateur /></d
 const formulaireStatVente = () => <div><FormulaireStatVente /></div>;
 const allAnnonce = () => <div className="conten"><AllAnnonce /></div>;
 const voitureDefini = () => <div><VoitureDefini /></div>;
+const tableauDynamique = (tableName) => <div><TableauDynamique tableName={tableName} /></div>;
 
 
 export default function App(params) {
@@ -58,6 +60,7 @@ export default function App(params) {
     typevehicule:typevehicule,
     carburant: carburant,
     voitureDefini: voitureDefini,
+    tableauDynamique: tableauDynamique,
   };
 
   const handleClick = async (componentKey,checkToken) => {
@@ -149,8 +152,8 @@ export default function App(params) {
           return <ComponentToRender formulaireName={'typevehicule'}/>;
         case 'carburant':
           return <ComponentToRender formulaireName={'carburant'}/>;
-        case 'comission':
-          return <ComponentToRender formulaireName={'comission'}/>;
+        case 'listeBoiteDeVitesse':
+          return <ComponentToRender tableName={'listeBoiteDeVitesse'}/>;
         default:
           return <ComponentToRender formulaireName={'comission'}/>;
       }
@@ -171,7 +174,7 @@ export default function App(params) {
               <div id="main-menu" className="main-menu collapse navbar-collapse">
                   <ul className="nav navbar-nav">
                       <li className="active">
-                          <a href="#" onClick={() => deconnection('login')}><i className="menu-icon fa fa-laptop"></i>Deconnexion </a>
+                          <a href="#" onClick={() => deconnection('comission')}><i className="menu-icon fa fa-laptop"></i>Deconnexion </a>
                       </li>
                       <li className="menu-title">Title</li>
                       <li className="menu-item-has-children dropdown">
@@ -198,7 +201,15 @@ export default function App(params) {
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce </a></li>
 
                           </ul>
-                    </li>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-th"></i>Liste</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listeBoiteDeVitesse',true)}>Boite de vitesse</a></li>
+                          </ul>
+                      </li>
+
                       <li>
                           <a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce </a>
                       </li>
