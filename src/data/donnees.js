@@ -50,11 +50,7 @@
       listInput : 
       [
         {
-          name : 'email',
-          type : 'text',
-        },
-        {
-          name : 'mot de passe',
+          name : 'description',
           type : 'text',
         }          
       ]

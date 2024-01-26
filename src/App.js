@@ -7,6 +7,7 @@ import FormulaireStatVoitureDefinie from './composant/formulaire/FormulaireStatV
 import FormulaireStatVenteUtilisateur from './composant/formulaire/FormulaireStatVenteUtilisateur.js'
 import AllAnnonce from './composant/annonce/AllAnnonce.js';
 import VoitureDefini from './composant/formulaire/VoitureDefini_insertion.js';
+import TableauDynamique from './composant/tableau/TableauDynamique';
 
 import './App.css';
 import RightPanel from './composant/templateadmin/RightPanel .js';
@@ -24,6 +25,7 @@ const formulaireStatVoitureDefinie = () => <div><FormulaireStatVoitureDefinie />
 const formulaireStatVenteUser = () => <div><FormulaireStatVenteUtilisateur /></div>;
 const allAnnonce = () => <div className="conten"><AllAnnonce /></div>;
 const voitureDefini = () => <div><VoitureDefini /></div>;
+const tableauDynamique = (tableName) => <div><TableauDynamique tableName={tableName} /></div>;
 
 
 export default function App(params) {
@@ -52,6 +54,7 @@ export default function App(params) {
     marque : marque,
     carburant: carburant,
     voitureDefini: voitureDefini,
+    tableauDynamique: tableauDynamique,
   };
 
   const handleClick = async (componentKey,checkToken) => {
@@ -139,8 +142,8 @@ export default function App(params) {
           return <ComponentToRender formulaireName={'marque'}/>;
         case 'carburant':
           return <ComponentToRender formulaireName={'carburant'}/>;
-        case 'comission':
-          return <ComponentToRender formulaireName={'comission'}/>;
+        case 'listeBoiteDeVitesse':
+          return <ComponentToRender tableName={'listeBoiteDeVitesse'}/>;
         default:
           return <ComponentToRender formulaireName={'comission'}/>;
       }
@@ -161,7 +164,7 @@ export default function App(params) {
               <div id="main-menu" className="main-menu collapse navbar-collapse">
                   <ul className="nav navbar-nav">
                       <li className="active">
-                          <a href="#" onClick={() => deconnection('login')}><i className="menu-icon fa fa-laptop"></i>Deconnexion </a>
+                          <a href="#" onClick={() => deconnection('comission')}><i className="menu-icon fa fa-laptop"></i>Deconnexion </a>
                       </li>
                       <li className="menu-title">Title</li>
                       <li className="menu-item-has-children dropdown">
@@ -186,6 +189,14 @@ export default function App(params) {
 
                           </ul>
                       </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-th"></i>Liste</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listeBoiteDeVitesse',true)}>Boite de vitesse</a></li>
+                          </ul>
+                      </li>
+
                       <li>
                           <a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce </a>
                       </li>
