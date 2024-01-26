@@ -6,6 +6,7 @@ import FormulaireRevenueUtilisateur from './composant/formulaire/FormulaireReven
 import FormulaireStatVoitureDefinie from './composant/formulaire/FormulaireStatVoitureDefinie.js';
 import FormulaireStatVenteUtilisateur from './composant/formulaire/FormulaireStatVenteUtilisateur.js'
 import AllAnnonce from './composant/annonce/AllAnnonce.js';
+import VoitureDefini from './composant/formulaire/VoitureDefini_insertion.js';
 
 import './App.css';
 import RightPanel from './composant/templateadmin/RightPanel .js';
@@ -22,6 +23,7 @@ const formulaireRevenueUtilisateur = () => <div><FormulaireRevenueUtilisateur />
 const formulaireStatVoitureDefinie = () => <div><FormulaireStatVoitureDefinie /></div>;
 const formulaireStatVenteUser = () => <div><FormulaireStatVenteUtilisateur /></div>;
 const allAnnonce = () => <div className="conten"><AllAnnonce /></div>;
+const voitureDefini = () => <div><VoitureDefini /></div>;
 
 
 export default function App(params) {
@@ -49,6 +51,7 @@ export default function App(params) {
     comission : comission,
     marque : marque,
     carburant: carburant,
+    voitureDefini: voitureDefini,
   };
 
   const handleClick = async (componentKey,checkToken) => {
@@ -130,6 +133,8 @@ export default function App(params) {
           return <ComponentToRender />;
         case 'formulaireStatVenteUser':
           return <ComponentToRender />;
+        case 'voitureDefini':
+          return <ComponentToRender />;
         case 'marque':
           return <ComponentToRender formulaireName={'marque'}/>;
         case 'carburant':
@@ -168,6 +173,7 @@ export default function App(params) {
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('comission',true)}>Insertion commission</a></li>
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('carburant',true)}>Insertion carburant</a></li>
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('modele',true)}>Insertion modele</a></li>
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('voitureDefini',true)}>Insertion voiture defini</a></li>                          
                           </ul>
                       </li>
 
