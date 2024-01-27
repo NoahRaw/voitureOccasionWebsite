@@ -39,7 +39,7 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
         fetchData();
         
       } else {
-        console.error('Erreur lors de la soumission des données:', response.statusText);
+        console.error('Erreur lors de la   soumission des données:', response.statusText);
       }
     } catch (error) {
       console.error('Erreur lors de la soumission des données:', error);
