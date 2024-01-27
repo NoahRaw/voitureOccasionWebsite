@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BarChart from "../chart/BarChart";
+import LineChart from "../chart/LineChart";
+import PieChart from "../chart/PieChart";
 
 const StatistiqueRevenue = ({date}) => {
   const [userData, setUserData] = useState([]);
@@ -46,7 +48,6 @@ const StatistiqueRevenue = ({date}) => {
 
   return (
     <div>
-      {/* <ChartTest></ChartTest> */}
       <div style={{ width: 700 }}>
       {
         chartData!=null &&
@@ -80,6 +81,7 @@ const StatistiqueRevenue = ({date}) => {
                                   ))}
                                 </tbody>
                               </table>
+                              {1>2 && <LineChart></LineChart> && <PieChart></PieChart>}
     </div>
     </div>
     </div>
