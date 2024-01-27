@@ -38,6 +38,30 @@ const liste = [
           value : 'description',
         }
       ]
+    },
+    {
+      tableauId : 'listCarburant',
+      tableuTitle : 'Liste de tous les carburants',
+      lien : 'http://localhost:52195/Carburant',
+      listColonne : 
+      [
+        {
+          name : 'Description',
+          value : 'description',
+        }
+      ]
+    },
+    {
+      tableauId : 'listMarque',
+      tableuTitle : 'Liste des marques',
+      lien : 'http://localhost:52195/Marque',
+      listColonne : 
+      [
+        {
+          name : 'Description',
+          value : 'description',
+        }
+      ]
     }
   ]
 

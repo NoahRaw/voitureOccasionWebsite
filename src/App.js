@@ -32,6 +32,8 @@ const voitureDefini = () => <div><VoitureDefini /></div>;
 const listeBoiteDeVitesse = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
 const listepuissance = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
 const listModele = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
+const listMarque = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
+const listCarburant = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
 
 
 export default function App(params) {
@@ -65,6 +67,8 @@ export default function App(params) {
     listeBoiteDeVitesse: listeBoiteDeVitesse,
     listepuissance: listepuissance,
     listModele: listModele,
+    listCarburant : listCarburant,
+    listMarque : listMarque
   };
 
   const handleClick = async (componentKey,checkToken) => {
@@ -162,6 +166,10 @@ export default function App(params) {
           return <ComponentToRender tableName={'listepuissance'}/>;
         case 'listModele':
           return <ComponentToRender tableName={'listModele'}/>;
+        case 'listMarque':
+          return <ComponentToRender tableName={'listMarque'}/>;
+        case 'listCarburant':
+          return <ComponentToRender tableName={'listCarburant'}/>;
         default:
           return <ComponentToRender formulaireName={'comission'}/>;
       }
@@ -206,6 +214,22 @@ export default function App(params) {
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur',true)}>Statistique revenue utilisateurr</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVenteUser',true)}>Statistique rang de vente utilisateur</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVente',true)}>Statistique commission des ventes</a></li>
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Marque</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('marque',true)}>Insertion marque</a></li>  
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listMarque',true)}>Liste</a></li>                        
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Carburant</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('carburant',true)}>Insertion carburant</a></li>     
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listCarburant',true)}>Liste</a></li>                    
                           </ul>
                       </li>
 
