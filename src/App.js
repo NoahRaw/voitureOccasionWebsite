@@ -193,17 +193,67 @@ export default function App(params) {
                           <a href="#" onClick={() => deconnection('comission')}><i className="menu-icon fa fa-laptop"></i>Deconnexion </a>
                       </li>
                       <li className="menu-title">Title</li>
+
                       <li className="menu-item-has-children dropdown">
-                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Insertion</a>
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Boite de vitesse</a>
                           <ul className="sub-menu children dropdown-menu">
-                              <li><i className="fa fa-table"></i><a href="" onClick={() => handleClick('boiteDeVitesse',true)}>Insertion boite de vitesse</a></li>
-                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('puissance',true)}>Insertion puissance</a></li>
-                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('marque',true)}>Insertion marque</a></li>
-                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('typevehicule',true)}>Insertion type vehicule</a></li>
-                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('comission',true)}>Insertion commission</a></li>
-                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('carburant',true)}>Insertion carburant</a></li>
-                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('modele',true)}>Insertion modele</a></li>
-                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('voitureDefini',true)}>Insertion voiture defini</a></li>                          
+                              <li><i className="fa fa-table"></i><a href="" onClick={() => handleClick('boiteDeVitesse',true)}>Insertion boite de vitesse</a></li>  
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listeBoiteDeVitesse',true)}>Liste boite de vitesse</a></li>                        
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Puissance</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('puissance',true)}>Insertion puissance</a></li>  
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listepuissance',true)}>Liste puissance</a></li>                        
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Marque</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('marque',true)}>Insertion marque</a></li>  
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listMarque',true)}>Liste marque</a></li>                        
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Type de vehicule</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('typevehicule',true)}>Insertion type vehicule</a></li>  
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Commission</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('comission',true)}>Insertion commission</a></li>  
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listMarque',true)}>Liste commission</a></li>                        
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Carburant</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('carburant',true)}>Insertion carburant</a></li>     
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listCarburant',true)}>Liste carburant</a></li>                    
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Modele</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('modele',true)}>Insertion modele</a></li>  
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listModele',true)}> Liste modele</a></li>                        
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Voiture defini</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('voitureDefini',true)}>Insertion voiture defini</a></li>  
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listMarque',true)}>Liste</a></li>                        
                           </ul>
                       </li>
 
@@ -214,31 +264,6 @@ export default function App(params) {
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur',true)}>Statistique revenue utilisateurr</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVenteUser',true)}>Statistique rang de vente utilisateur</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVente',true)}>Statistique commission des ventes</a></li>
-                          </ul>
-                      </li>
-
-                      <li className="menu-item-has-children dropdown">
-                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Marque</a>
-                          <ul className="sub-menu children dropdown-menu">
-                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('marque',true)}>Insertion marque</a></li>  
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listMarque',true)}>Liste</a></li>                        
-                          </ul>
-                      </li>
-
-                      <li className="menu-item-has-children dropdown">
-                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Carburant</a>
-                          <ul className="sub-menu children dropdown-menu">
-                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('carburant',true)}>Insertion carburant</a></li>     
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listCarburant',true)}>Liste</a></li>                    
-                          </ul>
-                      </li>
-
-                      <li className="menu-item-has-children dropdown">
-                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-th"></i>Liste</a>
-                          <ul className="sub-menu children dropdown-menu">
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listeBoiteDeVitesse',true)}>Boite de vitesse</a></li>
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listepuissance',true)}>Puissance</a></li>
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listModele',true)}>Modele</a></li>
                           </ul>
                       </li>
 
