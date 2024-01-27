@@ -12,7 +12,7 @@ const liste = [
       ]
     },
     {
-        tableauId : 'puissance',
+        tableauId : 'listepuissance',
         tableuTitle : 'Liste des puissance',
       lien : 'http://localhost:52195/Puissance',
       listColonne : 
