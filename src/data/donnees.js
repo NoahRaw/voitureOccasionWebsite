@@ -114,7 +114,7 @@
       ]
     },
     {
-      formulaireId : 'be',
+      formulaireId : 'typevehicule',
       formulaireTitle : 'Insertion de type de vehicule',
       jsonValue : 
       {

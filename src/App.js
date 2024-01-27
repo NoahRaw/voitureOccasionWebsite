@@ -4,7 +4,9 @@ import Formulaire from './composant/Formulaire.js';
 import Login from './composant/formulaire/Login.js';
 import FormulaireRevenueUtilisateur from './composant/formulaire/FormulaireRevenueUtilisateur.js';
 import FormulaireStatVoitureDefinie from './composant/formulaire/FormulaireStatVoitureDefinie.js';
-import FormulaireStatVenteUtilisateur from './composant/formulaire/FormulaireStatVenteUtilisateur.js'
+import FormulaireStatVenteUtilisateur from './composant/formulaire/FormulaireStatVenteUtilisateur.js';
+import FormulaireStatVente from './composant/formulaire/FormulaireStatVente.js';
+
 import AllAnnonce from './composant/annonce/AllAnnonce.js';
 import VoitureDefini from './composant/formulaire/VoitureDefini_insertion.js';
 
@@ -16,12 +18,14 @@ const boiteDeVitesse = ({ formulaireName }) => <div><Formulaire formulaireName={
 const puissance = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}></Formulaire></div>;
 const modele = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const marque = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
+const typevehicule = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const carburant = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const comission = ({ formulaireName }) => <div><Formulaire formulaireName={formulaireName}/></div>;
 const login = ({setIsConnected}) => <div><Login setIsConnected={setIsConnected}/></div>;
 const formulaireRevenueUtilisateur = () => <div><FormulaireRevenueUtilisateur /></div>;
 const formulaireStatVoitureDefinie = () => <div><FormulaireStatVoitureDefinie /></div>;
 const formulaireStatVenteUser = () => <div><FormulaireStatVenteUtilisateur /></div>;
+const formulaireStatVente = () => <div><FormulaireStatVente /></div>;
 const allAnnonce = () => <div className="conten"><AllAnnonce /></div>;
 const voitureDefini = () => <div><VoitureDefini /></div>;
 
@@ -48,8 +52,10 @@ export default function App(params) {
     allAnnonce: allAnnonce,
     formulaireStatVoitureDefinie: formulaireStatVoitureDefinie, 
     formulaireStatVenteUser : formulaireStatVenteUser,
+    formulaireStatVente : formulaireStatVente,
     comission : comission,
     marque : marque,
+    typevehicule:typevehicule,
     carburant: carburant,
     voitureDefini: voitureDefini,
   };
@@ -133,10 +139,14 @@ export default function App(params) {
           return <ComponentToRender />;
         case 'formulaireStatVenteUser':
           return <ComponentToRender />;
+        case 'formulaireStatVente':
+          return <ComponentToRender />;
         case 'voitureDefini':
           return <ComponentToRender />;
         case 'marque':
           return <ComponentToRender formulaireName={'marque'}/>;
+        case 'typevehicule':
+          return <ComponentToRender formulaireName={'typevehicule'}/>;
         case 'carburant':
           return <ComponentToRender formulaireName={'carburant'}/>;
         case 'comission':
@@ -170,6 +180,7 @@ export default function App(params) {
                               <li><i className="fa fa-table"></i><a href="" onClick={() => handleClick('boiteDeVitesse',true)}>Insertion boite de vitesse</a></li>
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('puissance',true)}>Insertion puissance</a></li>
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('marque',true)}>Insertion marque</a></li>
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('typevehicule',true)}>Insertion type vehicule</a></li>
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('comission',true)}>Insertion commission</a></li>
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('carburant',true)}>Insertion carburant</a></li>
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('modele',true)}>Insertion modele</a></li>
@@ -183,10 +194,11 @@ export default function App(params) {
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVoitureDefinie',true)}>Statistique voiture</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur',true)}>Statistique revenue utilisateurr</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVenteUser',true)}>Statistique rang de vente utilisateur</a></li>
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVente',true)}>Statistique commission des ventes</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce </a></li>
 
                           </ul>
-                      </li>
+                    </li>
                       <li>
                           <a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce </a>
                       </li>
