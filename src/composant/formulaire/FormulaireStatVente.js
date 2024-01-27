@@ -10,7 +10,7 @@ const [userData, setUserData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:52195/Statistique/utilisateur');
+        const response = await fetch('https://voitureoccasion-production.up.railway.app/Statistique/utilisateur');
   
         if (response.ok) {
           const data = await response.json();

@@ -9,7 +9,7 @@ const AuthComponent = ({setIsConnected}) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:52195/Utilisateurs/authenticateAdmin?login=${login}&pwd=${pwd}`, {
+      const response = await fetch(`https://voitureoccasion-production.up.railway.app/Utilisateurs/authenticateAdmin?login=${login}&pwd=${pwd}`, {
         method: 'GET',
       });
 

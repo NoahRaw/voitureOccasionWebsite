@@ -2,7 +2,7 @@ const liste = [
     {
       tableauId : 'listeBoiteDeVitesse',
       tableuTitle : 'Liste des boite de vitesse',
-      lien : 'http://localhost:52195/Boitedevitesse',
+      lien : 'https://voitureoccasion-production.up.railway.app/Boitedevitesse',
       listColonne : 
       [
         {
@@ -14,7 +14,7 @@ const liste = [
     {
         tableauId : 'listepuissance',
         tableuTitle : 'Liste des puissance',
-      lien : 'http://localhost:52195/Puissance',
+      lien : 'https://voitureoccasion-production.up.railway.app/Puissance',
       listColonne : 
       [
         {
@@ -30,7 +30,7 @@ const liste = [
     {
         tableauId : 'listModele',
         tableuTitle : 'Liste des modeles',
-      lien : 'http://localhost:52195/Modele',
+      lien : 'https://voitureoccasion-production.up.railway.app/Modele',
       listColonne : 
       [
         {
