@@ -84,7 +84,7 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
         <div className="imagePrincipale">
         {voiturePhoto.map((photo) => (
             // eslint-disable-next-line jsx-a11y/img-redundant-alt
-            <img src={`img/${photo.nomPhoto}`} alt="Description de l'image" width="200" height="150"></img>
+            <img src={`${photo.nomPhoto}`} alt="Description de l'image" width="200" height="150"></img>
         ))}
         </div>
 
