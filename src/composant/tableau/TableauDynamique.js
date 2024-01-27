@@ -16,6 +16,7 @@ const TableauDynamique = ({ tableName }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      if(formulaire){
         try {
         const response = await fetch(formulaire.lien, {
             method: 'GET'
@@ -32,8 +33,9 @@ const TableauDynamique = ({ tableName }) => {
         console.error('Erreur lors de la requête HTTP:', error);
         }
     }
+    }
     fetchData();
-  }, [formulaire.lien]
+  }, [formulaire]
   )
 
   if (!formulaire) {
@@ -56,13 +58,12 @@ const TableauDynamique = ({ tableName }) => {
                            <h3 className="text-center">{formulaire.tableuTitle}</h3>
                        </div>
                        <hr/>
+                       {userData!=null &&
                        <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                             <tr>
                             {listInput.map((input, index) => (
-                             <div  className="form-group">
                                     <th key={index}>{input.name}</th>
-                             </div>
                             ))}
                             </tr>
                             </thead>
@@ -76,6 +77,7 @@ const TableauDynamique = ({ tableName }) => {
                                   ))}
                                 </tbody>
                         </table>
+                      }
                    </div>
                </div>
 

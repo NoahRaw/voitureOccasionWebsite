@@ -9,7 +9,7 @@ import FormulaireStatVente from './composant/formulaire/FormulaireStatVente.js';
 
 import AllAnnonce from './composant/annonce/AllAnnonce.js';
 import VoitureDefini from './composant/formulaire/VoitureDefini_insertion.js';
-import TableauDynamique from './composant/tableau/TableauDynamique';
+import TableauDynamique from './composant/tableau/TableauDynamique.js';
 
 import './App.css';
 import RightPanel from './composant/templateadmin/RightPanel .js';
@@ -29,7 +29,9 @@ const formulaireStatVenteUser = () => <div><FormulaireStatVenteUtilisateur /></d
 const formulaireStatVente = () => <div><FormulaireStatVente /></div>;
 const allAnnonce = () => <div className="conten"><AllAnnonce /></div>;
 const voitureDefini = () => <div><VoitureDefini /></div>;
-const tableauDynamique = (tableName) => <div><TableauDynamique tableName={tableName} /></div>;
+const listeBoiteDeVitesse = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
+const listepuissance = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
+const listModele = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
 
 
 export default function App(params) {
@@ -60,7 +62,9 @@ export default function App(params) {
     typevehicule:typevehicule,
     carburant: carburant,
     voitureDefini: voitureDefini,
-    tableauDynamique: tableauDynamique,
+    listeBoiteDeVitesse: listeBoiteDeVitesse,
+    listepuissance: listepuissance,
+    listModele: listModele,
   };
 
   const handleClick = async (componentKey,checkToken) => {
@@ -154,6 +158,10 @@ export default function App(params) {
           return <ComponentToRender formulaireName={'carburant'}/>;
         case 'listeBoiteDeVitesse':
           return <ComponentToRender tableName={'listeBoiteDeVitesse'}/>;
+        case 'listepuissance':
+          return <ComponentToRender tableName={'listepuissance'}/>;
+        case 'listModele':
+          return <ComponentToRender tableName={'listModele'}/>;
         default:
           return <ComponentToRender formulaireName={'comission'}/>;
       }
@@ -198,8 +206,6 @@ export default function App(params) {
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur',true)}>Statistique revenue utilisateurr</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVenteUser',true)}>Statistique rang de vente utilisateur</a></li>
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVente',true)}>Statistique commission des ventes</a></li>
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce </a></li>
-
                           </ul>
                       </li>
 
@@ -207,11 +213,13 @@ export default function App(params) {
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-th"></i>Liste</a>
                           <ul className="sub-menu children dropdown-menu">
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listeBoiteDeVitesse',true)}>Boite de vitesse</a></li>
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listepuissance',true)}>Puissance</a></li>
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listModele',true)}>Modele</a></li>
                           </ul>
                       </li>
 
                       <li>
-                          <a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce </a>
+                          <a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce</a>
                       </li>
                   </ul>
               </div>
@@ -219,7 +227,7 @@ export default function App(params) {
           </aside>
         </div>
       )}
-      
+      {/* <TableauDynamique tableName={'listeBoiteDeVitesse'} /> */}
       {renderComponent()}
     </div>
   );
