@@ -23,7 +23,7 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
 
         const fetchData = async () => {
           try {
-            const response = await fetch(`https://voitureoccasion-production.up.railway.app/Voitureutilisateur_view`);
+            const response = await fetch(`http://localhost:52195/Voitureutilisateur_view/voitureNonConfirmer`);
     
             if (response.ok) {
               const data = await response.json();
@@ -39,7 +39,7 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
         fetchData();
         
       } else {
-        console.error('Erreur lors de la soumission des données:', response.statusText);
+        console.error('Erreur lors de la   soumission des données:', response.statusText);
       }
     } catch (error) {
       console.error('Erreur lors de la soumission des données:', error);
@@ -84,7 +84,7 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
         <div className="imagePrincipale">
         {voiturePhoto.map((photo) => (
             // eslint-disable-next-line jsx-a11y/img-redundant-alt
-            <img src={`img/${photo.nomPhoto}`} alt="Description de l'image" width="200" height="150"></img>
+            <img src={`${photo.nomPhoto}`} alt="Description de l'image" width="200" height="150"></img>
         ))}
         </div>
 
