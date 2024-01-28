@@ -3,11 +3,12 @@ import '../../css/Login.css'
 
 const AuthComponent = ({setIsConnected}) => {
   const [token, setToken] = useState('');
-  const [login, setLogin] = useState('');
-  const [pwd, setPwd] = useState('');
+  const [login, setLogin] = useState('admin@gmail.com');
+  const [pwd, setPwd] = useState('0000');
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    
     try {
       const response = await fetch(`https://voitureoccasion-production.up.railway.app/Utilisateurs/authenticateAdmin?login=${login}&pwd=${pwd}`, {
         method: 'GET',
@@ -16,13 +17,14 @@ const AuthComponent = ({setIsConnected}) => {
       if (response.ok) {
         const data = await response.text();
         const authToken = data; // Assurez-vous d'adapter cela à la structure de la réponse du service webi
-        setToken(authToken);
         if(authToken){
+            setToken(authToken);
+            localStorage.setItem('authToken', authToken);
             setIsConnected(true);
         }
 
         // Stockage dans le localStorage
-        localStorage.setItem('authToken', authToken);
+        console.log(authToken)
       } else {
         console.error('Erreur lors de l\'authentification');
       }

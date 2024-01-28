@@ -39,7 +39,7 @@ export default function App(params) {
   const [currentComponent, setCurrentComponent] = useState('comission');
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [isConnected, setIsConnected] = useState(true);
+  const [isConnected, setIsConnected] = useState(false);
   const authToken = localStorage.getItem('authToken');
   // alert(authToken);
 
@@ -73,7 +73,7 @@ export default function App(params) {
     const authToken = localStorage.getItem('authToken');
 
     if(authToken==null){
-      // setIsConnected(false)
+      setIsConnected(false)
     }
     else if(checkToken===true){
       try {
@@ -91,7 +91,7 @@ export default function App(params) {
           console.log('componentKey: ',boolean);
 
           if(boolean===false){
-              // setIsConnected(false);
+              setIsConnected(false);
               // Stockage dans le localStorage
               localStorage.removeItem('authToken');
           }
@@ -120,7 +120,7 @@ export default function App(params) {
 
       if (response.ok) {
         localStorage.removeItem('authToken');
-        // setIsConnected(false);
+        setIsConnected(false);
       }
 
     } catch (error) {
