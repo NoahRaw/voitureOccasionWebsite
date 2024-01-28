@@ -62,6 +62,19 @@ const liste = [
           value : 'description',
         }
       ]
+    }
+    ,
+    {
+      tableauId : 'listTypevehicule',
+      tableuTitle : 'Liste type de vehicule',
+      lien : 'http://localhost:52195/typeDeVehicules',
+      listColonne : 
+      [
+        {
+          name : 'description',
+          value : 'description',
+        }
+      ]
     },
     {
       tableauId : 'listUtilisateur',
