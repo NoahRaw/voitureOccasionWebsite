@@ -62,6 +62,67 @@ const liste = [
           value : 'description',
         }
       ]
+    },
+    {
+      tableauId : 'listUtilisateur',
+      tableuTitle : 'Liste des utilisateur',
+      lien : 'http://localhost:52195/Utilisateurs',
+      listColonne : 
+      [
+        {
+          name : 'Nom utilisateur',
+          value : 'nomutilisateur',
+        },
+        {
+          name : 'email',
+          value : 'email',
+        },
+      ]
+    },
+
+    {
+      tableauId : 'listVoitureDefini',
+      tableuTitle : 'Liste des voiture definis',
+      lien : 'http://localhost:52195/Voituredefini_view',
+      listColonne : 
+      [
+        {
+          name : 'marque',
+          value : 'nommarque',
+        },
+        {
+          name : 'modele',
+          value : 'nommodele',
+        },
+        {
+          name : 'carburant',
+          value : 'nomcarburant',
+        },
+        {
+          name : 'kw',
+          value : 'kw',
+        },
+        {
+          name : 'cv',
+          value : 'cv',
+        },
+        {
+          name : 'boite de vitesse',
+          value : 'nomboitedevitesse',
+        },
+        {
+          name : 'type de vehicule',
+          value : 'nomtypedevehicule',
+        },
+        {
+          name : 'puissance',
+          value : 'puissance',
+        },
+        {
+          name : 'nombre de porte',
+          value : 'nbrporte',
+        }
+      ]
     }
   ]
 

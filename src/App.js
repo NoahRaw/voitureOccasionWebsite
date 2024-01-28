@@ -34,7 +34,8 @@ const listepuissance = ({tableName}) => <div><TableauDynamique tableName={tableN
 const listModele = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
 const listMarque = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
 const listCarburant = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
-
+const listUtilisateur = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
+const listVoitureDefini = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
 
 export default function App(params) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -68,7 +69,9 @@ export default function App(params) {
     listepuissance: listepuissance,
     listModele: listModele,
     listCarburant : listCarburant,
-    listMarque : listMarque
+    listMarque : listMarque,
+    listUtilisateur : listUtilisateur,
+    listVoitureDefini : listVoitureDefini
   };
 
   const handleClick = async (componentKey,checkToken) => {
@@ -170,6 +173,10 @@ export default function App(params) {
           return <ComponentToRender tableName={'listMarque'}/>;
         case 'listCarburant':
           return <ComponentToRender tableName={'listCarburant'}/>;
+        case 'listUtilisateur':
+          return <ComponentToRender tableName={'listUtilisateur'}/>;
+        case 'listVoitureDefini':
+          return <ComponentToRender tableName={'listVoitureDefini'}/>;
         default:
           return <ComponentToRender formulaireName={'comission'}/>;
       }
@@ -253,7 +260,13 @@ export default function App(params) {
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Voiture defini</a>
                           <ul className="sub-menu children dropdown-menu">
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('voitureDefini',true)}>Insertion voiture defini</a></li>  
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listMarque',true)}>Liste</a></li>                        
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listVoitureDefini',true)}>Liste voiture defini</a></li>                        
+                          </ul>
+                      </li>
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Utilisateur</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listUtilisateur',true)}>Liste utilisateur</a></li>                        
                           </ul>
                       </li>
 
