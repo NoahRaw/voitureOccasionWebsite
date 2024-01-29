@@ -51,40 +51,41 @@ const UserDataComponent = ({date}) => {
         <BarChart chartData={chartData} />
       }
       </div>
-
-      <div class="content"/>
-        <div class="animated fadeIn">
-            <div class="row">
-                <div class="col-md-12">
-                      <div class="card">
-                          <div class="card-header">
-                                <strong class="card-title">Statistique voiture</strong>
-                          </div>
-                          <div class="card-body">
-                              <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                <thead>
-                                  <tr>
-                                    <th>Marque</th>
-                                    <th>Modele</th>
-                                    <th>Nombre</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {userData.map((user) => (
-                                    <tr key={user.id}>
-                                      <td>{user.nomMarque}</td>
-                                      <td>{user.nomModele}</td>
-                                      <td>{user.nombre}</td>
-                                    </tr>
-                                  ))}
-                                </tbody>
-                              </table>
+        <div id="right-panel" class="right-panel">
+          <div class="content"/>
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-md-12">
+                          <div class="card">
+                              <div class="card-header">
+                                    <strong class="card-title">Statistique voiture</strong>
+                              </div>
+                              <div class="card-body">
+                                  <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th>Marque</th>
+                                        <th>Modele</th>
+                                        <th>Nombre</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {userData.map((user) => (
+                                        <tr key={user.id}>
+                                          <td>{user.nomMarque}</td>
+                                          <td>{user.nomModele}</td>
+                                          <td>{user.nombre}</td>
+                                        </tr>
+                                      ))}
+                                    </tbody>
+                                  </table>
+                                </div>
                             </div>
-                        </div>
+                      </div>
                   </div>
               </div>
-          </div>
-    </div>
+        </div>
+      </div>
   );
 };
 

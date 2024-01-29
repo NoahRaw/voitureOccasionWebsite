@@ -10,6 +10,7 @@ import FormulaireStatVente from './composant/formulaire/FormulaireStatVente.js';
 import AllAnnonce from './composant/annonce/AllAnnonce.js';
 import VoitureDefini from './composant/formulaire/VoitureDefini_insertion.js';
 import TableauDynamique from './composant/tableau/TableauDynamique.js';
+import ListeComission from './composant/tableau/ListeComission.js';
 
 import './App.css';
 import RightPanel from './composant/templateadmin/RightPanel .js';
@@ -37,6 +38,7 @@ const listTypevehicule = ({tableName}) => <div><TableauDynamique tableName={tabl
 const listCarburant = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
 const listUtilisateur = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
 const listVoitureDefini = ({tableName}) => <div><TableauDynamique tableName={tableName} /></div>;
+const listeComission = () => <div><ListeComission /></div>;
 
 export default function App(params) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -73,7 +75,8 @@ export default function App(params) {
     listMarque : listMarque,
     listTypevehicule: listTypevehicule,
     listUtilisateur : listUtilisateur,
-    listVoitureDefini : listVoitureDefini
+    listVoitureDefini : listVoitureDefini,
+    listeComission : listeComission
   };
 
   const handleClick = async (componentKey,checkToken) => {
@@ -181,6 +184,8 @@ export default function App(params) {
           return <ComponentToRender tableName={'listUtilisateur'}/>;
         case 'listVoitureDefini':
           return <ComponentToRender tableName={'listVoitureDefini'}/>;
+        case 'listeComission':
+          return <ComponentToRender tableName={'listeComission'}/>;
         default:
           return <ComponentToRender formulaireName={'comission'}/>;
       }
@@ -203,7 +208,7 @@ export default function App(params) {
                       <li className="active">
                           <a href="#" onClick={() => deconnection('comission')}><i className="menu-icon fa fa-laptop"></i>Deconnexion </a>
                       </li>
-                      <li className="menu-title">Title</li>
+                      <li className="menu-title">A propos du voiture</li>
 
                       <li className="menu-item-has-children dropdown">
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Boite de vitesse</a>
@@ -241,7 +246,7 @@ export default function App(params) {
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Commission</a>
                           <ul className="sub-menu children dropdown-menu">
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('comission',true)}>Insertion commission</a></li>  
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listMarque',true)}>Liste commission</a></li>                        
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listeComission',true)}>Liste commission</a></li>                        
                           </ul>
                       </li>
 
@@ -268,6 +273,8 @@ export default function App(params) {
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listVoitureDefini',true)}>Liste voiture defini</a></li>                        
                           </ul>
                       </li>
+
+                      <li className="menu-title">User</li>
                       <li className="menu-item-has-children dropdown">
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Utilisateur</a>
                           <ul className="sub-menu children dropdown-menu">
@@ -275,6 +282,7 @@ export default function App(params) {
                           </ul>
                       </li>
 
+                      <li className="menu-title">Statistique</li>
                       <li className="menu-item-has-children dropdown">
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-th"></i>Statistique</a>
                           <ul className="sub-menu children dropdown-menu">
@@ -285,6 +293,7 @@ export default function App(params) {
                           </ul>
                       </li>
 
+                      <li className="menu-title">Annonce</li>
                       <li>
                           <a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce</a>
                       </li>

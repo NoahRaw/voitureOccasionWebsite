@@ -55,6 +55,7 @@ const StatistiqueRevenue = ({date}) => {
       }
       </div>
 
+      <div id="right-panel" class="right-panel">
       <div class="content"/>
             <div class="animated fadeIn">
                 <div class="row">
@@ -82,6 +83,7 @@ const StatistiqueRevenue = ({date}) => {
                                 </tbody>
                               </table>
                               {1>2 && <LineChart></LineChart> && <PieChart></PieChart>}
+    </div>
     </div>
     </div>
     </div>

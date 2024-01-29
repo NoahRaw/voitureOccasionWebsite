@@ -46,43 +46,49 @@ const TableauDynamique = ({ tableName }) => {
   
 
   return (
-    <div className="col-lg-7" style={{marginLeft: 450, marginTop: 100}}>
-       <div className="card">
-           <div className="card-header">
-               <strong className="card-title">{formulaire.tableuTitle}</strong>
-           </div>
-           <div className="card-body">
-               <div id="pay-invoice">
-                   <div className="card-body">
-                       <div className="card-title">
-                           <h3 className="text-center">{formulaire.tableuTitle}</h3>
-                       </div>
-                       <hr/>
-                       {userData!=null &&
-                       <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                            <thead>
-                            <tr>
-                            {listInput.map((input, index) => (
-                                    <th key={index}>{input.name}</th>
-                            ))}
-                            </tr>
-                            </thead>
-                            <tbody>
-                                  {userData.map((user) => (
-                                    <tr>
-                                        {listInput.map((input, index) => (
-                                      <td key={index}>{user[input.value]}</td>
-                                        ))}
-                                    </tr>
+    <div id="right-panel" class="right-panel">
+      <div class="content">
+        <div class="animated fadeIn">
+          <div className="col-lg-10">
+            <div className="card">
+                <div className="card-header">
+                    <strong className="card-title">{formulaire.tableuTitle}</strong>
+                </div>
+                <div className="card-body">
+                    <div id="pay-invoice">
+                        <div className="card-body">
+                            <div className="card-title">
+                                <h3 className="text-center">{formulaire.tableuTitle}</h3>
+                            </div>
+                            <hr/>
+                            {userData!=null &&
+                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                  <thead>
+                                  <tr>
+                                  {listInput.map((input, index) => (
+                                          <th key={index}>{input.name}</th>
                                   ))}
-                                </tbody>
-                        </table>
-                      }
-                   </div>
-               </div>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                        {userData.map((user) => (
+                                          <tr>
+                                              {listInput.map((input, index) => (
+                                            <td key={index}>{user[input.value]}</td>
+                                              ))}
+                                          </tr>
+                                        ))}
+                                      </tbody>
+                              </table>
+                            }
+                        </div>
+                    </div>
 
-           </div>
-       </div> 
+                </div>
+            </div> 
+          </div>
+        </div>
+      </div> 
     </div>
   );
 };
