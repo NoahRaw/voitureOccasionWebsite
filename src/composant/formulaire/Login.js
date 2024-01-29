@@ -10,7 +10,7 @@ const AuthComponent = ({setIsConnected}) => {
     e.preventDefault();
     
     try {
-      const response = await fetch(`https://voitureoccasion-production.up.railway.appUtilisateurs/authenticateAdmin?login=${login}&pwd=${pwd}`, {
+      const response = await fetch(`https://voitureoccasion-production.up.railway.app/Utilisateurs/authenticateAdmin?login=${login}&pwd=${pwd}`, {
         method: 'GET',
       });
 

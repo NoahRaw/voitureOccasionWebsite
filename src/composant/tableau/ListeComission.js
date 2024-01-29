@@ -13,7 +13,7 @@ const ListeCommission = () => {
   useEffect(() => {
     const fetchCommissions = async () => {
       try {
-        const response = await fetch('https://voitureoccasion-production.up.railway.appCommission');
+        const response = await fetch('https://voitureoccasion-production.up.railway.app/Commission');
         if (response.ok) {
           const data = await response.json();
           setCommissions(data);
@@ -44,7 +44,7 @@ const ListeCommission = () => {
 
   const handleUpdate = async () => {
     try {
-      const response = await fetch(`https://voitureoccasion-production.up.railway.appCommission/${selectedCommission.id_comission}`, {
+      const response = await fetch(`https://voitureoccasion-production.up.railway.app/Commission/${selectedCommission.id_comission}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ const ListeCommission = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`https://voitureoccasion-production.up.railway.appCommission/${id}`, {
+      const response = await fetch(`https://voitureoccasion-production.up.railway.app/Commission/${id}`, {
         method: 'DELETE',
       });
 

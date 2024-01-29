@@ -9,7 +9,7 @@ const AllAnnonce = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://voitureoccasion-production.up.railway.appVoitureutilisateur_view/voitureNonConfirmer`);
+        const response = await fetch(`https://voitureoccasion-production.up.railway.app/Voitureutilisateur_view/voitureNonConfirmer`);
 
         if (response.ok) {
           const data = await response.json();

@@ -7,7 +7,7 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
   const handleSubmit = async () => {
     // Vous pouvez maintenant effectuer votre appel à votre service Spring Boot ici
     try {
-      const response = await fetch(`https://voitureoccasion-production.up.railway.appVoitureUtilisateurs/validation/${idvoitureutilisateur}`, {
+      const response = await fetch(`https://voitureoccasion-production.up.railway.app/VoitureUtilisateurs/validation/${idvoitureutilisateur}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
 
         const fetchData = async () => {
           try {
-            const response = await fetch(`https://voitureoccasion-production.up.railway.appVoitureutilisateur_view/voitureNonConfirmer`);
+            const response = await fetch(`https://voitureoccasion-production.up.railway.app/Voitureutilisateur_view/voitureNonConfirmer`);
     
             if (response.ok) {
               const data = await response.json();
@@ -52,7 +52,7 @@ export default function DetailAnnonce({ nomutilisateur,idvoitureutilisateur, dat
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://voitureoccasion-production.up.railway.appphotoVoitureUtilisateurs/getPhotoVoitureUtilisateur/${idvoitureutilisateur}`);
+        const response = await fetch(`https://voitureoccasion-production.up.railway.app/photoVoitureUtilisateurs/getPhotoVoitureUtilisateur/${idvoitureutilisateur}`);
 
         if (response.ok) {
           const data = await response.json();

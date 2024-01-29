@@ -12,7 +12,7 @@ const StatistiqueRevenue = ({date}) => {
     console.log(`${date.dateDebut} ou ${date.dateFin}`);
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://voitureoccasion-production.up.railway.appUtilisateurs/revenue?dateDebut=${date.dateDebut}&dateFin=${date.dateFin}`);
+        const response = await fetch(`https://voitureoccasion-production.up.railway.app/Utilisateurs/revenue?dateDebut=${date.dateDebut}&dateFin=${date.dateFin}`);
 
         if (response.ok) {
           const data = await response.json();

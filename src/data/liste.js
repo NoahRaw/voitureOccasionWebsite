@@ -2,7 +2,7 @@ const liste = [
     {
       tableauId : 'listeBoiteDeVitesse',
       tableuTitle : 'Liste des boite de vitesse',
-      lien : 'https://voitureoccasion-production.up.railway.appBoitedevitesse',
+      lien : 'https://voitureoccasion-production.up.railway.app/Boitedevitesse',
       listColonne : 
       [
         {
@@ -14,7 +14,7 @@ const liste = [
     {
         tableauId : 'listepuissance',
         tableuTitle : 'Liste des puissance',
-      lien : 'https://voitureoccasion-production.up.railway.appPuissance',
+      lien : 'https://voitureoccasion-production.up.railway.app/Puissance',
       listColonne : 
       [
         {
@@ -30,7 +30,7 @@ const liste = [
     {
         tableauId : 'listModele',
         tableuTitle : 'Liste des modeles',
-      lien : 'https://voitureoccasion-production.up.railway.appModele',
+      lien : 'https://voitureoccasion-production.up.railway.app/Modele',
       listColonne : 
       [
         {
@@ -42,7 +42,7 @@ const liste = [
     {
       tableauId : 'listCarburant',
       tableuTitle : 'Liste de tous les carburants',
-      lien : 'https://voitureoccasion-production.up.railway.appCarburant',
+      lien : 'https://voitureoccasion-production.up.railway.app/Carburant',
       listColonne : 
       [
         {
@@ -54,7 +54,7 @@ const liste = [
     {
       tableauId : 'listMarque',
       tableuTitle : 'Liste des marques',
-      lien : 'https://voitureoccasion-production.up.railway.appMarque',
+      lien : 'https://voitureoccasion-production.up.railway.app/Marque',
       listColonne : 
       [
         {
@@ -67,7 +67,7 @@ const liste = [
     {
       tableauId : 'listTypevehicule',
       tableuTitle : 'Liste type de vehicule',
-      lien : 'https://voitureoccasion-production.up.railway.apptypeDeVehicules',
+      lien : 'https://voitureoccasion-production.up.railway.app/typeDeVehicules',
       listColonne : 
       [
         {
@@ -79,7 +79,7 @@ const liste = [
     {
       tableauId : 'listUtilisateur',
       tableuTitle : 'Liste des utilisateur',
-      lien : 'https://voitureoccasion-production.up.railway.appUtilisateurs',
+      lien : 'https://voitureoccasion-production.up.railway.app/Utilisateurs',
       listColonne : 
       [
         {
@@ -96,7 +96,7 @@ const liste = [
     {
       tableauId : 'listVoitureDefini',
       tableuTitle : 'Liste des voiture definis',
-      lien : 'https://voitureoccasion-production.up.railway.appVoituredefini_view',
+      lien : 'https://voitureoccasion-production.up.railway.app/Voituredefini_view',
       listColonne : 
       [
         {
