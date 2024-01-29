@@ -12,7 +12,7 @@ const FormPhotoDeVehicule = () => {
     // Exemple de chargement des options depuis un web service
     const fetchDropdownOptions = async () => {
       try {
-        const response = await fetch('http://localhost:52195/VoitureUtilisateurs');
+        const response = await fetch('https://voitureoccasion-production.up.railway.appVoitureUtilisateurs');
         if (response.ok) {
           const options = await response.json();
           setDropdownOptions(options);

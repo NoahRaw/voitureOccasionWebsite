@@ -7,7 +7,7 @@
         idboitedevitesse: 0,
         description: '',
       },
-      lien : 'http://localhost:52195/Boitedevitesse',
+      lien : 'https://voitureoccasion-production.up.railway.appBoitedevitesse',
       listInput : 
       [
         {
@@ -25,7 +25,7 @@
         kw: 1.0,
         cv: 2.0
       },
-      lien : 'http://localhost:52195/Puissance',
+      lien : 'https://voitureoccasion-production.up.railway.appPuissance',
       listInput : 
       [
         {
@@ -46,7 +46,7 @@
         idmodele: 0,
         description: ''      
       },
-      lien : 'http://localhost:52195/Modele',
+      lien : 'https://voitureoccasion-production.up.railway.appModele',
       listInput : 
       [
         {
@@ -63,7 +63,7 @@
         // idCarburant: 0,
         description: '',
       },
-      lien : 'http://localhost:52195/Carburant',
+      lien : 'https://voitureoccasion-production.up.railway.appCarburant',
       listInput : 
       [
         {
@@ -80,7 +80,7 @@
         date : '',
         pourcentage : 0,
       },
-      lien : 'http://localhost:52195/Commission',
+      lien : 'https://voitureoccasion-production.up.railway.appCommission',
       listInput : 
       [
         {
@@ -100,7 +100,7 @@
       {
         description : "",
       },
-      lien : 'http://localhost:52195/Marque',
+      lien : 'https://voitureoccasion-production.up.railway.appMarque',
       listInput : 
       [
         {
@@ -117,7 +117,7 @@
         idTypeDeVehicule: 0,
         description: '',
       },
-      lien : 'http://localhost:52195/typeDeVehicules',
+      lien : 'https://voitureoccasion-production.up.railway.apptypeDeVehicules',
       listInput : 
       [
         {
