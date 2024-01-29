@@ -45,7 +45,7 @@ const DateRangeForm = ({ onFormSubmit }) => {
                     <div id="pay-invoice">
                         <div className="card-body">
                             <div className="card-title">
-                                <h3 className="text-center">Statistique voiture definie</h3>
+                                <h3 className="text-center">Classement des voitures les plus vendues</h3>
                             </div>
                             <hr/>
                             <form onSubmit={handleSubmit}>

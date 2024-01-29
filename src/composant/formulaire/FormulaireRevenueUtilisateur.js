@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import StatistiqueRevenue from '../tableau/StatistiqueRevenue.js';
 
 const DateRangeForm = ({ onFormSubmit }) => {
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [startDate, setStartDate] = useState('2025-01-06');
+  const [endDate, setEndDate] = useState('2025-01-10');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [date, setDate] = useState({ dateDebut: '2025-01-06', dateFin: '2025-01-10' });
   const [key, setKey] = useState(0);
