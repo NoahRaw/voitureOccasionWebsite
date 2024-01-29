@@ -205,9 +205,17 @@ export default function App(params) {
             <nav className="navbar navbar-expand-sm navbar-default">
               <div id="main-menu" className="main-menu collapse navbar-collapse">
                   <ul className="nav navbar-nav">
-                      <li className="active">
-                          <a href="#" onClick={() => deconnection('comission')}><i className="menu-icon fa fa-laptop"></i>Deconnexion </a>
+                    <li className="menu-title">Statistique</li>
+                      <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-th"></i>Statistique</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVoitureDefinie',true)}>Statistique voiture</a></li>
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur',true)}>Statistique revenue utilisateurr</a></li>
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVenteUser',true)}>Statistique rang de vente utilisateur</a></li>
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVente',true)}>Statistique commission des ventes</a></li>
+                          </ul>
                       </li>
+                      
                       <li className="menu-title">A propos du voiture</li>
 
                       <li className="menu-item-has-children dropdown">
@@ -274,6 +282,11 @@ export default function App(params) {
                           </ul>
                       </li>
 
+                      <li className="menu-title">Annonce</li>
+                      <li>
+                          <a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce</a>
+                      </li>
+
                       <li className="menu-title">User</li>
                       <li className="menu-item-has-children dropdown">
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Utilisateur</a>
@@ -282,20 +295,8 @@ export default function App(params) {
                           </ul>
                       </li>
 
-                      <li className="menu-title">Statistique</li>
-                      <li className="menu-item-has-children dropdown">
-                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-th"></i>Statistique</a>
-                          <ul className="sub-menu children dropdown-menu">
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVoitureDefinie',true)}>Statistique voiture</a></li>
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireRevenueUtilisateur',true)}>Statistique revenue utilisateurr</a></li>
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVenteUser',true)}>Statistique rang de vente utilisateur</a></li>
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('formulaireStatVente',true)}>Statistique commission des ventes</a></li>
-                          </ul>
-                      </li>
-
-                      <li className="menu-title">Annonce</li>
-                      <li>
-                          <a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce</a>
+                      <li className="active">
+                          <a href="#" onClick={() => deconnection('comission')}><i className="menu-icon fa fa-laptop"></i>Deconnexion </a>
                       </li>
                   </ul>
               </div>
