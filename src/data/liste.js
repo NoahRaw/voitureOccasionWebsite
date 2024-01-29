@@ -83,6 +83,7 @@ const liste = [
       tableauId : 'listUtilisateur',
       tableuTitle : 'Liste des utilisateur',
       lien : 'https://voitureoccasion-production.up.railway.app/Utilisateurs',
+      nomColonneId : 'idutilisateur',
       listColonne : 
       [
         {
@@ -100,6 +101,7 @@ const liste = [
       tableauId : 'listVoitureDefini',
       tableuTitle : 'Liste des voiture definis',
       lien : 'https://voitureoccasion-production.up.railway.app/Voituredefini_view',
+      nomColonneId : 'idvoitureutilisateur',
       listColonne : 
       [
         {
