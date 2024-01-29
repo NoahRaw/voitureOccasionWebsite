@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import StatistiqueVoitureDefinie from '../tableau/StatistiqueVoitureDefinie.js';
 
 const DateRangeForm = ({ onFormSubmit }) => {
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [startDate, setStartDate] = useState('2024-01-01');
+  const [endDate, setEndDate] = useState('2025-01-11');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [date, setDate] = useState({ dateDebut: '2025-01-09', dateFin: '2025-01-09' });
   const [key, setKey] = useState(0);
