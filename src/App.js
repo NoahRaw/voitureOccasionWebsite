@@ -228,6 +228,14 @@ export default function App(params) {
                       <li className="menu-title">A propos du voiture</li>
 
                       <li className="menu-item-has-children dropdown">
+                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Commission</a>
+                          <ul className="sub-menu children dropdown-menu">
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('comission',true)}>Insertion commission</a></li>  
+                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listeComission',true)}>Liste commission</a></li>                        
+                          </ul>
+                      </li>
+
+                      <li className="menu-item-has-children dropdown">
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Boite de vitesse</a>
                           <ul className="sub-menu children dropdown-menu">
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('boiteDeVitesse',true)}>Insertion boite de vitesse</a></li>  
@@ -256,14 +264,6 @@ export default function App(params) {
                           <ul className="sub-menu children dropdown-menu">
                               <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('typevehicule',true)}>Insertion type vehicule</a></li> 
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listTypevehicule',true)}>Liste type vehicule</a></li> 
-                          </ul>
-                      </li>
-
-                      <li className="menu-item-has-children dropdown">
-                          <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Commission</a>
-                          <ul className="sub-menu children dropdown-menu">
-                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('comission',true)}>Insertion commission</a></li>  
-                              <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listeComission',true)}>Liste commission</a></li>                        
                           </ul>
                       </li>
 
