@@ -89,7 +89,7 @@ export default function App(params) {
     }
     else if(checkToken===true){
       try {
-        const response = await fetch(`http://localhost:52195/Utilisateurs/isTokenValide`, {
+        const response = await fetch(`https://voitureoccasion-production.up.railway.app/Utilisateurs/isTokenValide`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ export default function App(params) {
     const authToken = localStorage.getItem('authToken');
 
     try {
-      const response = await fetch(`http://localhost:52195/Utilisateurs/deconnection`, {
+      const response = await fetch(`https://voitureoccasion-production.up.railway.app/Utilisateurs/deconnection`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
