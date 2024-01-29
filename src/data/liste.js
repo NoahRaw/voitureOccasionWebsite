@@ -3,6 +3,7 @@ const liste = [
       tableauId : 'listeBoiteDeVitesse',
       tableuTitle : 'Liste des boite de vitesse',
       lien : 'https://voitureoccasion-production.up.railway.app/Boitedevitesse',
+      nomColonneId : 'idboitedevitesse',
       listColonne : 
       [
         {
