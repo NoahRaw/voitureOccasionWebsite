@@ -51,7 +51,6 @@ const UserDataComponent = ({date}) => {
         <BarChart chartData={chartData} />
       }
       </div>
-        <div id="right-panel" class="right-panel">
           <div class="content"/>
             <div class="animated fadeIn">
                 <div class="row">
@@ -85,7 +84,6 @@ const UserDataComponent = ({date}) => {
                   </div>
               </div>
         </div>
-      </div>
   );
 };
 

@@ -53,7 +53,6 @@ const StatistiqueVenteUtilisateur = ({date}) => {
       }
       </div>
       
-      <div id="right-panel" class="right-panel">  
         <div class="content">
               <div class="animated fadeIn">
                   <div class="row">
@@ -89,7 +88,7 @@ const StatistiqueVenteUtilisateur = ({date}) => {
             </div>
         </div>
       </div>
-    </div>
+
   );
 };
 
