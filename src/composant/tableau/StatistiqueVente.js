@@ -10,7 +10,7 @@ const UserDataComponent = ({date}) => {
     console.log(`${date.dateDebut} ou ${date.dateFin}`);
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://voitureoccasion-production.up.railway.app/Statistique/ventes?dateDebut=${date.dateDebut}&dateFin=${date.dateFin}`);
+        const response = await fetch(`http://localhost:52195/Statistique/ventes?dateDebut=${date.dateDebut}&dateFin=${date.dateFin}`);
 
         if (response.ok) {
           const data = await response.json();

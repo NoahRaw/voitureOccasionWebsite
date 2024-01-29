@@ -2,7 +2,7 @@ const liste = [
     {
       tableauId : 'listeBoiteDeVitesse',
       tableuTitle : 'Liste des boite de vitesse',
-      lien : 'https://voitureoccasion-production.up.railway.app/Boitedevitesse',
+      lien : 'http://localhost:52195/Boitedevitesse',
       listColonne : 
       [
         {
@@ -14,7 +14,7 @@ const liste = [
     {
         tableauId : 'listepuissance',
         tableuTitle : 'Liste des puissance',
-      lien : 'https://voitureoccasion-production.up.railway.app/Puissance',
+      lien : 'http://localhost:52195/Puissance',
       listColonne : 
       [
         {
@@ -30,7 +30,7 @@ const liste = [
     {
         tableauId : 'listModele',
         tableuTitle : 'Liste des modeles',
-      lien : 'https://voitureoccasion-production.up.railway.app/Modele',
+      lien : 'http://localhost:52195/Modele',
       listColonne : 
       [
         {
@@ -42,7 +42,7 @@ const liste = [
     {
       tableauId : 'listCarburant',
       tableuTitle : 'Liste de tous les carburants',
-      lien : 'https://voitureoccasion-production.up.railway.app/Carburant',
+      lien : 'http://localhost:52195/Carburant',
       listColonne : 
       [
         {
@@ -54,7 +54,7 @@ const liste = [
     {
       tableauId : 'listMarque',
       tableuTitle : 'Liste des marques',
-      lien : 'https://voitureoccasion-production.up.railway.app/Marque',
+      lien : 'http://localhost:52195/Marque',
       listColonne : 
       [
         {
@@ -67,7 +67,7 @@ const liste = [
     {
       tableauId : 'listTypevehicule',
       tableuTitle : 'Liste type de vehicule',
-      lien : 'https://voitureoccasion-production.up.railway.app/typeDeVehicules',
+      lien : 'http://localhost:52195/typeDeVehicules',
       listColonne : 
       [
         {
@@ -79,7 +79,7 @@ const liste = [
     {
       tableauId : 'listUtilisateur',
       tableuTitle : 'Liste des utilisateur',
-      lien : 'https://voitureoccasion-production.up.railway.app/Utilisateurs',
+      lien : 'http://localhost:52195/Utilisateurs',
       listColonne : 
       [
         {
@@ -96,7 +96,7 @@ const liste = [
     {
       tableauId : 'listVoitureDefini',
       tableuTitle : 'Liste des voiture definis',
-      lien : 'https://voitureoccasion-production.up.railway.app/Voituredefini_view',
+      lien : 'http://localhost:52195/Voituredefini_view',
       listColonne : 
       [
         {

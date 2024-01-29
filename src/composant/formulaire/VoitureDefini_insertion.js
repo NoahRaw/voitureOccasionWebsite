@@ -19,7 +19,7 @@ const MyForm = () => {
     // Exemple de chargement des options depuis un web service
     const fetchDropdownOptions = async () => {
       try {
-        const response = await fetch('https://voitureoccasion-production.up.railway.app/Boitedevitesse');
+        const response = await fetch('http://localhost:52195/Boitedevitesse');
         if (response.ok) {
           const options = await response.json();
           setDropdownOptions(options);
@@ -40,7 +40,7 @@ const MyForm = () => {
   useEffect(() => {
     const fetchDropdownMarque = async () => {
       try {
-        const response = await fetch('https://voitureoccasion-production.up.railway.app/Marque');
+        const response = await fetch('http://localhost:52195/Marque');
         if (response.ok) {
           const options = await response.json();
           setDropdownMarque(options);
@@ -61,7 +61,7 @@ const MyForm = () => {
   useEffect(() => {
     const fetchDropdownModele = async () => {
       try {
-        const response = await fetch('https://voitureoccasion-production.up.railway.app/Modele');
+        const response = await fetch('http://localhost:52195/Modele');
         if (response.ok) {
           const options = await response.json();
           setDropdownModele(options);
@@ -81,7 +81,7 @@ const MyForm = () => {
   useEffect(() => {
     const fetchDropdownCarburant = async () => {
       try {
-        const response = await fetch('https://voitureoccasion-production.up.railway.app/Carburant');
+        const response = await fetch('http://localhost:52195/Carburant');
         if (response.ok) {
           const options = await response.json();
           setDropdownCarburant(options);
@@ -101,7 +101,7 @@ const MyForm = () => {
   useEffect(() => {
     const fetchDropdownPuissance = async () => {
       try {
-        const response = await fetch('https://voitureoccasion-production.up.railway.app/Puissance');
+        const response = await fetch('http://localhost:52195/Puissance');
         if (response.ok) {
           const options = await response.json();
           setDropdownPuissance(options);
@@ -122,7 +122,7 @@ const MyForm = () => {
   useEffect(() => {
     const fetchDropdownTypeVehicule = async () => {
       try {
-        const response = await fetch('https://voitureoccasion-production.up.railway.app/typeDeVehicules');
+        const response = await fetch('http://localhost:52195/typeDeVehicules');
         if (response.ok) {
           const options = await response.json();
           setDropdownTypeVehicule(options);
@@ -176,7 +176,7 @@ const MyForm = () => {
 
     // Vous pouvez maintenant effectuer votre appel à votre service Spring Boot ici
     try {
-      const response = await fetch('https://voitureoccasion-production.up.railway.app/VoitureDefinis', {
+      const response = await fetch('http://localhost:52195/VoitureDefinis', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
