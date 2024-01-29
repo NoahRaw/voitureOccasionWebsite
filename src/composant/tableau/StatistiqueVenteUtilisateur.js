@@ -19,7 +19,7 @@ const StatistiqueVenteUtilisateur = ({date}) => {
             labels: data.map((data) => data.email),
             datasets: [
             {
-                label: "Statistique de vente de voiture par utilisateur",
+                label: "Nombre de vente de voiture par utilisateur",
                 data: data.map((data) => data.nombredeventes),
                 backgroundColor: [
                 "rgba(75,192,192,1)",
