@@ -213,7 +213,7 @@ export default function App(params) {
                       <li className="menu-item-has-children dropdown">
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Boite de vitesse</a>
                           <ul className="sub-menu children dropdown-menu">
-                              <li><i className="fa fa-table"></i><a href="" onClick={() => handleClick('boiteDeVitesse',true)}>Insertion boite de vitesse</a></li>  
+                              <li><i className="fa fa-table"></i><a href="#" onClick={() => handleClick('boiteDeVitesse',true)}>Insertion boite de vitesse</a></li>  
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listeBoiteDeVitesse',true)}>Liste boite de vitesse</a></li>                        
                           </ul>
                       </li>
