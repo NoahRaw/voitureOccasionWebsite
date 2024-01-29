@@ -63,7 +63,7 @@
         // idCarburant: 0,
         description: '',
       },
-      lien : 'http://localhost:52195/Carburant/create',
+      lien : 'http://localhost:52195/Carburant',
       listInput : 
       [
         {
@@ -80,7 +80,7 @@
         date : '',
         pourcentage : 0,
       },
-      lien : 'http://localhost:52195/Commission/create',
+      lien : 'http://localhost:52195/Commission',
       listInput : 
       [
         {
@@ -100,7 +100,7 @@
       {
         description : "",
       },
-      lien : 'http://localhost:52195/Marque/create',
+      lien : 'http://localhost:52195/Marque',
       listInput : 
       [
         {

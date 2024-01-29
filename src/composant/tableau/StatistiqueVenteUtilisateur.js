@@ -53,40 +53,43 @@ const StatistiqueVenteUtilisateur = ({date}) => {
       }
       </div>
       
-      <div class="content"/>
-            <div class="animated fadeIn">
-                <div class="row">
+      <div id="right-panel" class="right-panel">  
+        <div class="content">
+              <div class="animated fadeIn">
+                  <div class="row">
 
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Data Table</strong>
-                            </div>
-                            <div class="card-body">
-                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Nom</th>
-                                            <th>Email Utilisateur</th>
-                                            <th>Nombre de vente</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                      {userData.map((user) => (
-                                          <tr key={user.idutilisateur}>
-                                              <td>{user.nomutilisateur}</td>
-                                              <td>{user.email}</td>
-                                              <td>{user.nombredeventes}</td>
-                                          </tr>
-                                        ))}
-                                    </tbody>
-                                  </table>
+                      <div class="col-md-12">
+                          <div class="card">
+                              <div class="card-header">
+                                  <strong class="card-title">Data Table</strong>
                               </div>
-                        </div>
-                    </div>
-              </div>
-          </div>
+                              <div class="card-body">
+                                  <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                      <thead>
+                                          <tr>
+                                              <th>Nom</th>
+                                              <th>Email Utilisateur</th>
+                                              <th>Nombre de vente</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                        {userData.map((user) => (
+                                            <tr key={user.idutilisateur}>
+                                                <td>{user.nomutilisateur}</td>
+                                                <td>{user.email}</td>
+                                                <td>{user.nombredeventes}</td>
+                                            </tr>
+                                          ))}
+                                      </tbody>
+                                    </table>
+                                </div>
+                          </div>
+                      </div>
+                </div>
+            </div>
+        </div>
       </div>
+    </div>
   );
 };
 

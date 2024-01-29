@@ -205,108 +205,138 @@ const MyForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>
-          Marque:
-          <select value={idmarque} onChange={handleTextMarque}>
-            <option value="">Sélectionnez une option</option>
-            {dropdownMarque.map((option) => (
-              <option value={option.id_marque}>
-                {option.description}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
 
-      <div>
-        <label>
-          Modele:
-          <select value={idmodele} onChange={handleTextModele}>
-            <option value="">Sélectionnez une option</option>
-            {dropdownModele.map((option) => (
-              <option value={option.idmodele}>
-                {option.description}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
+  <div id="right-panel" className="right-panel">
+    <div className="content">
+      <div className="animated fadeIn">
+        <div className="col-lg-10">
+          <div className="card">
+            <div className="card-header">
+              <strong className="card-title">Voiture defini</strong>
+            </div>
+            <div className="card-body">
+              <div id="pay-invoice">
+                <div className="card-body">
+                  <div className="card-title">
+                      <h3 className="text-center">Insertion de voiture defini</h3>
+                  </div>
+                  <hr></hr>
+                  <form onSubmit={handleSubmit}>
 
-      <div>
-        <label>
-          Carburant:
-          <select value={idcarburant} onChange={handleTextCarburant}>
-            <option value="">Sélectionnez une option</option>
-            {dropdownCarburant.map((option) => (
-              <option value={option.id_carburant}>
-                {option.description}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
+                      <div className="form-group">
+                        <label for="cc-payment" className="control-label mb-1"><b>Marque</b></label>
+                        <div className="col-10 col-md-15">
+                            <select value={idmarque} onChange={handleTextMarque} id="select" className="form-control">
+                                <option value="" disabled selected>Choisissez un marque</option>
+                                  {dropdownMarque.map((option) => (
+                                  <option value={option.id_marque}>
+                                    {option.description}
+                                  </option>
+                                ))}
+                            </select>
+                        </div>
+                      </div>
 
-      <div>
-        <label>
-          Puissance:
-          <select value={idpuissance} onChange={handleTextPuissance}>
-            <option value="">Sélectionnez une option</option>
-            {dropdownPuissance.map((option) => (
-              <option value={option.idpuissance}>
-                {option.kw} kw {option.cv} cv
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
 
-      <div>
-        <label>
-          Boite de vitesse:
-          <select value={idboitedevitesse} onChange={handleTextBoiteDeVitesse}>
-            <option value="">Sélectionnez une option</option>
-            {dropdownOptions.map((option) => (
-              <option value={option.idboitedevitesse}>
-                {option.description}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
+                      <div className="form-group">
+                        <label for="cc-payment" className="control-label mb-1"><b>Modele</b></label>
+                        <div className="col-10 col-md-15">
+                            <select value={idmodele} onChange={handleTextModele} id="select" className="form-control">
+                                <option value="" disabled selected>Choisissez un modele</option>
+                                  {dropdownModele.map((option) => (
+                                  <option value={option.idmodele}>
+                                    {option.description}
+                                  </option>
+                                ))}
+                            </select>
+                        </div>
+                      </div>
 
-      <div>
-        <label>
-        Type de vehicule:
-          <select value={idtypedevehicule} onChange={handleTextTypeVehicule}>
-            <option value="">Sélectionnez une option</option>
-            {dropdownTypeVehicule.map((option) => (
-              <option value={option.idTypeDeVehicule}>
-                {option.description}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
-      
-      <div>
-        <label>
-          Nombre porte:
-          <input type="text" value={nbrporte} onChange={handleTextNbrPorte} />
-        </label>
-      </div>
+                      <div className="form-group">
+                        <label for="cc-payment" className="control-label mb-1"><b>Carburant</b></label>
+                        <div className="col-10 col-md-15">
+                            <select value={idcarburant} onChange={handleTextCarburant} id="select" className="form-control">
+                                <option value="" disabled selected>Choisissez un carburant</option>
+                                  {dropdownCarburant.map((option) => (
+                                  <option value={option.id_carburant}>
+                                    {option.description}
+                                  </option>
+                                ))}
+                            </select>
+                        </div>
+                      </div>
 
-      <div>
-        <label>
-          puissance:
-          <input type="text" value={puissanceVal} onChange={handleTextPuissanceVal} />
-        </label>
+                      <div className="form-group">
+                        <label for="cc-payment" className="control-label mb-1"><b>Puissance</b></label>
+                        <div className="col-10 col-md-15">
+                            <select value={idpuissance} onChange={handleTextPuissance} id="select" className="form-control">
+                                <option value="" disabled selected>Choisissez</option>
+                                  {dropdownPuissance.map((option) => (
+                                  <option value={option.idpuissance}>
+                                    {option.kw} kw {option.cv} cv
+                                  </option>
+                                ))}
+                            </select>
+                        </div>
+                      </div>
+
+                      <div className="form-group">
+                        <label for="cc-payment" className="control-label mb-1"><b> Boite de vitesse</b></label>
+                        <div className="col-10 col-md-15">
+                            <select value={idboitedevitesse} onChange={handleTextBoiteDeVitesse} id="select" className="form-control">
+                                <option value="" disabled selected>Choisissez</option>
+                                  {dropdownOptions.map((option) => (
+                                  <option value={option.idboitedevitesse}>
+                                    {option.description}
+                                  </option>
+                                ))}
+                            </select>
+                        </div>
+                      </div>
+
+                      <div className="form-group">
+                        <label for="cc-payment" className="control-label mb-1"><b>Type de vehicule</b></label>
+                        <div className="col-10 col-md-15">
+                            <select value={idtypedevehicule} onChange={handleTextTypeVehicule} id="select" className="form-control">
+                                <option value="" disabled selected>Choisissez</option>
+                                  {dropdownTypeVehicule.map((option) => (
+                                  <option value={option.idTypeDeVehicule}>
+                                    {option.description}
+                                  </option>
+                                ))}
+                            </select>
+                        </div>
+                      </div>
+
+                      <div className="col-10">
+                          <label for="x_card_code" className="control-label mb-1"><b>Nombre de porte</b></label>
+                          <div className="input-group">
+                              <input id="x_card_code" type="text" value={nbrporte} onChange={handleTextNbrPorte} className="form-control cc-cvc"/>
+                          </div>
+                      </div>
+
+                      <div className="col-10" style={{marginBottom : 50}}>
+                          <label for="x_card_code" className="control-label mb-1"><b>Puissance</b></label>
+                          <div className="input-group">
+                              <input id="x_card_code" type="text" value={puissanceVal} onChange={handleTextPuissanceVal} className="form-control cc-cvc"/>
+                          </div>
+                      </div>
+
+                      <div>
+                        <button id="payment-button" type="submit" className="btn btn-lg btn-info btn-block">
+                            <span id="payment-button-amount">Enregistrer</span>
+                        </button>
+                      </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <button type="submit">Enregistrer</button>
-      </div>
-    </form>
+    </div>
+  </div>
   );
 };
 
