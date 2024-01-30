@@ -102,6 +102,36 @@ const ListeCommission = () => {
                       <h3 className="text-center">Liste des commissions a prendre pour les ventes</h3>
                     </div>
                     <hr />
+                    {selectedCommission && (
+                      <div className="card mt-4">
+                        <div className="card-header">
+                          <strong className="card-title">Modifier la Commission</strong>
+                        </div>
+                        <div className="card-body">
+                          <div className="form-group">
+                            <label htmlFor="date">Date</label>
+                            <input
+                              type="date"
+                              id="date"
+                              className="form-control"
+                              // value={commissionData.date}
+                              onChange={(e) => setCommissionData({ ...commissionData, date: e.target.value })}
+                            />
+                          </div>
+                          <div className="form-group">
+                            <label htmlFor="pourcentage">Pourcentage</label>
+                            <input
+                              type="number"
+                              id="pourcentage"
+                              className="form-control"
+                              value={commissionData.pourcentage}
+                              onChange={(e) => setCommissionData({ ...commissionData, pourcentage: e.target.value })}
+                            />
+                          </div>
+                          <button type="button" className="btn btn-primary" onClick={handleUpdate}>Mettre à jour</button>
+                        </div>
+                      </div>
+                    )}
                     <table id="bootstrap-data-table" className="table table-striped table-bordered">
                       <thead>
                         <tr>
@@ -130,36 +160,6 @@ const ListeCommission = () => {
                 </div>
               </div>
             </div>
-            {selectedCommission && (
-              <div className="card mt-4">
-                <div className="card-header">
-                  <strong className="card-title">Modifier la Commission</strong>
-                </div>
-                <div className="card-body">
-                  <div className="form-group">
-                    <label htmlFor="date">Date</label>
-                    <input
-                      type="date"
-                      id="date"
-                      className="form-control"
-                      // value={commissionData.date}
-                      onChange={(e) => setCommissionData({ ...commissionData, date: e.target.value })}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="pourcentage">Pourcentage</label>
-                    <input
-                      type="number"
-                      id="pourcentage"
-                      className="form-control"
-                      value={commissionData.pourcentage}
-                      onChange={(e) => setCommissionData({ ...commissionData, pourcentage: e.target.value })}
-                    />
-                  </div>
-                  <button type="button" className="btn btn-primary" onClick={handleUpdate}>Mettre à jour</button>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
