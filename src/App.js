@@ -225,8 +225,7 @@ export default function App(params) {
                           <a href="#" onClick={() => handleClick('allAnnonce',true)}><i className="menu-icon fa fa-th"></i>validation annonce</a>
                       </li>
                       
-                      <li className="menu-title">A propos du voiture</li>
-
+                      <li className="menu-title">Regle de gestion</li>
                       <li className="menu-item-has-children dropdown">
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Commission</a>
                           <ul className="sub-menu children dropdown-menu">
@@ -234,6 +233,8 @@ export default function App(params) {
                               <li><i className="menu-icon fa fa-th"></i><a href="#" onClick={() => handleClick('listeComission',true)}>Liste commission</a></li>                        
                           </ul>
                       </li>
+
+                      <li className="menu-title">A propos du voiture</li>
 
                       <li className="menu-item-has-children dropdown">
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-table"></i>Boite de vitesse</a>

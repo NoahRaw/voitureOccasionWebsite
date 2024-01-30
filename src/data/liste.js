@@ -46,6 +46,7 @@ const liste = [
       tableauId : 'listCarburant',
       tableuTitle : 'Liste de tous les carburants',
       lien : 'https://voitureoccasion-production.up.railway.app/Carburant',
+      nomColonneId : 'idcarburant',
       listColonne : 
       [
         {
@@ -58,6 +59,7 @@ const liste = [
       tableauId : 'listMarque',
       tableuTitle : 'Liste des marques',
       lien : 'https://voitureoccasion-production.up.railway.app/Marque',
+      nomColonneId : 'idmarque',
       listColonne : 
       [
         {
@@ -71,6 +73,7 @@ const liste = [
       tableauId : 'listTypevehicule',
       tableuTitle : 'Liste type de vehicule',
       lien : 'https://voitureoccasion-production.up.railway.app/typeDeVehicules',
+      nomColonneId : 'idTypeDeVehicule',
       listColonne : 
       [
         {
@@ -101,7 +104,7 @@ const liste = [
       tableauId : 'listVoitureDefini',
       tableuTitle : 'Liste des voiture definis',
       lien : 'https://voitureoccasion-production.up.railway.app/Voituredefini_view',
-      nomColonneId : 'idvoitureutilisateur',
+      nomColonneId : 'idvoituredefini',
       listColonne : 
       [
         {

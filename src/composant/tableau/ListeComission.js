@@ -99,7 +99,7 @@ const ListeCommission = () => {
                 <div id="pay-invoice">
                   <div className="card-body">
                     <div className="card-title">
-                      <h3 className="text-center">Listes des commissions</h3>
+                      <h3 className="text-center">Liste des commissions a prendre pour les ventes</h3>
                     </div>
                     <hr />
                     <table id="bootstrap-data-table" className="table table-striped table-bordered">
